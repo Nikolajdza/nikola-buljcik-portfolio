@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { Header } from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +27,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-
-  const t = await getTranslations({
-    locale,
-    namespace: "LocaleLayout",
-  });
-
+  const t = await getTranslations({ locale, namespace: "LocaleLayout" });
   return {
     title: t("title"),
     description: t("description"),
+    metadataBase: new URL("https://nikolabuljcik.dev"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      type: "website",
+      locale,
+    },
   };
 }
 
@@ -56,12 +60,15 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="bg-background text-foreground min-h-screen antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <ThemeProvider>
+            <Header />
+            <main className="pt-16">{children}</main>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

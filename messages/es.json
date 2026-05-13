@@ -1,14 +1,29 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portafolio",
-    "description": "Ingeniero de software centrado en desarrollo frontend moderno."
+    "description": "Ingeniero de software centrado en desarrollo frontend moderno. React, Next.js, TypeScript."
   },
-  "HomePage": {
-    "title": "Portafolio",
-    "subtitle": "Ingeniero de software · Frontend · React y Next.js",
-    "body": "Este sitio está en construcción. Estamos creando un portafolio multilingüe paso a paso."
+  "Nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "badge": "Disponible para oportunidades",
+    "greeting": "Hola, soy",
+    "role": "Ingeniero de Software & Desarrollador Frontend",
+    "stack": "React · Next.js · TypeScript · React Native",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Contáctame"
   },
   "LocaleSwitcher": {
-    "label": "Idioma"
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español",
+    "it": "Italiano",
+    "fr": "Français",
+    "sr": "Srpski",
+    "de": "Deutsch"
   }
 }

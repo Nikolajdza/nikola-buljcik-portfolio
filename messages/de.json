@@ -1,14 +1,29 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Softwareingenieur mit Schwerpunkt auf moderner Frontend-Entwicklung."
+    "description": "Softwareingenieur mit Schwerpunkt auf moderner Frontend-Entwicklung. React, Next.js, TypeScript."
   },
-  "HomePage": {
-    "title": "Portfolio",
-    "subtitle": "Softwareingenieur · Frontend · React & Next.js",
-    "body": "Diese Website befindet sich im Aufbau. Wir bauen Schritt für Schritt ein mehrsprachiges Portfolio."
+  "Nav": {
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "Hero": {
+    "badge": "Offen für neue Möglichkeiten",
+    "greeting": "Hallo, ich bin",
+    "role": "Software-Ingenieur & Frontend-Entwickler",
+    "stack": "React · Next.js · TypeScript · React Native",
+    "cta_projects": "Projekte ansehen",
+    "cta_contact": "Kontakt aufnehmen"
   },
   "LocaleSwitcher": {
-    "label": "Sprache"
+    "label": "Sprache",
+    "en": "English",
+    "es": "Español",
+    "it": "Italiano",
+    "fr": "Français",
+    "sr": "Srpski",
+    "de": "Deutsch"
   }
 }

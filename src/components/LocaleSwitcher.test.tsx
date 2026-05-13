@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 import messages from "../../messages/en.json";
@@ -10,14 +11,17 @@ vi.mock("@/i18n/navigation", () => ({
     children,
     href,
     locale,
+    onClick,
   }: {
     children: ReactNode;
     href: string;
     locale?: string;
+    onClick?: () => void;
   }) => (
     <a
       data-testid={`locale-link-${locale}`}
       href={`/${locale}${href === "/" ? "" : href}`}
+      onClick={onClick}
     >
       {children}
     </a>
@@ -34,11 +38,33 @@ function renderWithIntl(ui: ReactNode) {
 }
 
 describe("LocaleSwitcher", () => {
-  it("shows the language label and a link for each locale", () => {
+  it("renders the toggle button with current locale code", () => {
+    renderWithIntl(<LocaleSwitcher />);
+    // locale code is lowercase in the span — `en`
+    const btn = screen.getByRole("button", { name: /language/i });
+    expect(btn).toBeInTheDocument();
+    expect(btn).toHaveTextContent(/en/i);
+  });
+
+  it("opens the dropdown on click and lists all locales", async () => {
+    const user = userEvent.setup();
     renderWithIntl(<LocaleSwitcher />);
 
-    expect(screen.getByRole("navigation", { name: "Language" })).toBeInTheDocument();
-    expect(screen.getByTestId("locale-link-de")).toHaveAttribute("href", "/de");
-    expect(screen.getByTestId("locale-link-sr")).toHaveTextContent("SR");
+    await user.click(screen.getByRole("button", { name: /language/i }));
+
+    expect(screen.getByRole("listbox")).toBeInTheDocument();
+    expect(screen.getByTestId("locale-link-de")).toBeInTheDocument();
+    expect(screen.getByTestId("locale-link-sr")).toHaveTextContent("Srpski");
+  });
+
+  it("closes the dropdown after a locale link is clicked", async () => {
+    const user = userEvent.setup();
+    renderWithIntl(<LocaleSwitcher />);
+
+    await user.click(screen.getByRole("button", { name: /language/i }));
+    expect(screen.getByRole("listbox")).toBeInTheDocument();
+
+    await user.click(screen.getByTestId("locale-link-de"));
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
   });
 });

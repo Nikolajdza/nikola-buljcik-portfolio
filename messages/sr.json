@@ -1,14 +1,29 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Softverski inženjer fokusiran na moderan frontend razvoj."
+    "description": "Softverski inženjer fokusiran na moderan frontend razvoj. React, Next.js, TypeScript."
   },
-  "HomePage": {
-    "title": "Portfolio",
-    "subtitle": "Softverski inženjer · Frontend · React i Next.js",
-    "body": "Sajt je u izradi. Korak po korak gradimo višejezički portfolio."
+  "Nav": {
+    "about": "O meni",
+    "experience": "Iskustvo",
+    "projects": "Projekti",
+    "contact": "Kontakt"
+  },
+  "Hero": {
+    "badge": "Dostupan za nove prilike",
+    "greeting": "Zdravo, ja sam",
+    "role": "Softverski inženjer i Frontend Developer",
+    "stack": "React · Next.js · TypeScript · React Native",
+    "cta_projects": "Projekti",
+    "cta_contact": "Stupite u kontakt"
   },
   "LocaleSwitcher": {
-    "label": "Jezik"
+    "label": "Jezik",
+    "en": "English",
+    "es": "Español",
+    "it": "Italiano",
+    "fr": "Français",
+    "sr": "Srpski",
+    "de": "Deutsch"
   }
 }
