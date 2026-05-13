@@ -15,7 +15,8 @@
     "role": "Softverski inženjer i Frontend Developer",
     "stack": "React · Next.js · TypeScript · Node.js",
     "cta_projects": "Projekti",
-    "cta_contact": "Stupite u kontakt"
+    "cta_contact": "Stupite u kontakt",
+    "cta_cv": "Preuzmi CV"
   },
   "About": {
     "label": "O meni",
@@ -32,7 +33,8 @@
     "skillFrontend": "Frontend",
     "skillMobile": "Mobilni",
     "skillBackend": "Backend",
-    "skillTools": "Alati"
+    "skillTools": "Alati",
+    "downloadCv": "Preuzmi CV"
   },
   "Experience": {
     "label": "Iskustvo",

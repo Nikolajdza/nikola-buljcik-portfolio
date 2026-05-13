@@ -4,11 +4,12 @@ import { useActionState, useEffect, useRef } from "react";
 import { MapPin, Clock, Briefcase, CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { sendContactForm } from "@/app/actions/contact";
 import type { ContactFormState } from "@/app/actions/contact";
+import { PERSONAL } from "@/config/personal";
 import { cn } from "@/lib/utils";
 
-const NIKOLA_EMAIL = "nikolajdza@gmail.com";
-const NIKOLA_LINKEDIN = "https://www.linkedin.com/in/nikola-buljcik-4aab65205";
-const NIKOLA_GITHUB = "https://github.com/Nikolajdza";
+const NIKOLA_EMAIL = PERSONAL.email;
+const NIKOLA_LINKEDIN = PERSONAL.linkedin;
+const NIKOLA_GITHUB = PERSONAL.github;
 
 const initialState: ContactFormState = { status: "idle" };
 

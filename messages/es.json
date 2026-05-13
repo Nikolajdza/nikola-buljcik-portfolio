@@ -15,7 +15,8 @@
     "role": "Ingeniero de Software & Desarrollador Frontend",
     "stack": "React · Next.js · TypeScript · Node.js",
     "cta_projects": "Ver Proyectos",
-    "cta_contact": "Contáctame"
+    "cta_contact": "Contáctame",
+    "cta_cv": "Descargar CV"
   },
   "About": {
     "label": "Sobre mí",
@@ -32,7 +33,8 @@
     "skillFrontend": "Frontend",
     "skillMobile": "Móvil",
     "skillBackend": "Backend",
-    "skillTools": "Herramientas"
+    "skillTools": "Herramientas",
+    "downloadCv": "Descargar CV"
   },
   "Experience": {
     "label": "Experiencia",

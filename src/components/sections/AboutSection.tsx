@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import { Download, Mail, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
+import { PERSONAL } from "@/config/personal";
 import { skillCategories } from "@/data/skills";
 
 function GitHubIcon({ size = 15 }: { size?: number }) {
@@ -42,13 +43,9 @@ interface SocialItem {
 }
 
 const SOCIALS: SocialItem[] = [
-  { label: "GitHub", href: "https://github.com/nikolajdza", Icon: GitHubIcon },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/nikola-buljcik-4aab65205",
-    Icon: LinkedInIcon,
-  },
-  { label: "Email", href: "mailto:nikolajdza@gmail.com", Icon: Mail },
+  { label: "GitHub", href: PERSONAL.github, Icon: GitHubIcon },
+  { label: "LinkedIn", href: PERSONAL.linkedin, Icon: LinkedInIcon },
+  { label: "Email", href: `mailto:${PERSONAL.email}`, Icon: Mail },
 ];
 
 export async function AboutSection() {
@@ -94,7 +91,7 @@ export async function AboutSection() {
               </FadeInItem>
             </FadeInStagger>
 
-            {/* Social links */}
+            {/* Social links + CV download */}
             <FadeIn delay={0.15}>
               <div className="flex flex-wrap gap-3">
                 {SOCIALS.map(({ label, href, Icon }) => (
@@ -110,6 +107,15 @@ export async function AboutSection() {
                     {label}
                   </a>
                 ))}
+                <a
+                  href={PERSONAL.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-accent/40 text-accent hover:bg-accent/10 flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium transition-colors"
+                >
+                  <Download size={15} />
+                  {t("downloadCv")}
+                </a>
               </div>
             </FadeIn>
 
