@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { HeroCodeCard } from "@/components/HeroCodeCard";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 
@@ -46,57 +47,65 @@ export default async function HomePage({ params }: Props) {
           }}
         />
 
-        {/* Content */}
+        {/* Content: two-column on large screens */}
         <Container className="relative z-10 py-24">
-          <div className="max-w-3xl">
-            {/* Available badge */}
-            <div className="border-accent/30 bg-accent/10 mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-1.5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
-              </span>
-              <span className="text-accent text-xs font-medium">{t("badge")}</span>
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[3fr_2fr]">
+            {/* ── Left: text content ─────────────────────────────── */}
+            <div>
+              {/* Available badge */}
+              <div className="border-accent/30 bg-accent/10 mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+                </span>
+                <span className="text-accent text-xs font-medium">{t("badge")}</span>
+              </div>
+
+              {/* Greeting */}
+              <p className="text-muted mb-2 text-base font-medium md:text-lg">
+                {t("greeting")}
+              </p>
+
+              {/* Name */}
+              <h1 className="mb-6 text-5xl leading-none font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                <span className="gradient-text">Nikola</span>
+                <br />
+                <span className="gradient-text">Buljčik</span>
+              </h1>
+
+              {/* Role */}
+              <p className="text-foreground/80 mb-4 text-lg font-medium sm:text-xl md:text-2xl">
+                {t("role")}
+              </p>
+
+              {/* Stack */}
+              <p className="text-muted mb-10 font-mono text-sm tracking-wider md:text-base">
+                {t("stack")}
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4">
+                <Link href="/#projects">
+                  <Button size="lg" variant="primary" className="group gap-2">
+                    {t("cta_projects")}
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </Button>
+                </Link>
+                <Link href="/#contact">
+                  <Button size="lg" variant="outline" className="gap-2">
+                    <Mail size={16} />
+                    {t("cta_contact")}
+                  </Button>
+                </Link>
+              </div>
             </div>
 
-            {/* Greeting */}
-            <p className="text-muted mb-2 text-base font-medium md:text-lg">
-              {t("greeting")}
-            </p>
-
-            {/* Name */}
-            <h1 className="mb-6 text-5xl leading-none font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-              <span className="gradient-text">Nikola</span>
-              <br />
-              <span className="gradient-text">Buljčik</span>
-            </h1>
-
-            {/* Role */}
-            <p className="text-foreground/80 mb-4 text-lg font-medium sm:text-xl md:text-2xl">
-              {t("role")}
-            </p>
-
-            {/* Stack */}
-            <p className="text-muted mb-10 font-mono text-sm tracking-wider md:text-base">
-              {t("stack")}
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <Link href="/#projects">
-                <Button size="lg" variant="primary" className="group gap-2">
-                  {t("cta_projects")}
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-0.5"
-                  />
-                </Button>
-              </Link>
-              <Link href="/#contact">
-                <Button size="lg" variant="outline" className="gap-2">
-                  <Mail size={16} />
-                  {t("cta_contact")}
-                </Button>
-              </Link>
+            {/* ── Right: code card (hidden on small screens) ─────── */}
+            <div className="hidden lg:flex lg:justify-end">
+              <HeroCodeCard />
             </div>
           </div>
         </Container>

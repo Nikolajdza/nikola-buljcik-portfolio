@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
 import { getTranslations } from "next-intl/server";
@@ -124,28 +125,26 @@ export async function AboutSection() {
             </div>
           </div>
 
-          {/* ── Right: photo placeholder ─────────────────────────────── */}
-          <div className="flex flex-col items-center gap-6 lg:items-start">
+          {/* ── Right: profile photo ─────────────────────────────────── */}
+          <div className="flex justify-center lg:justify-start">
             <div
-              className="relative w-full max-w-[280px] overflow-hidden rounded-2xl lg:max-w-full"
+              className="group relative w-full max-w-[300px] overflow-hidden rounded-2xl lg:max-w-full"
               style={{ aspectRatio: "3 / 4" }}
             >
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(129,140,248,0.15) 0%, rgba(24,24,27,0.8) 50%, rgba(34,211,238,0.1) 100%)",
-                }}
-              />
-              <div className="dot-grid absolute inset-0 opacity-30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="gradient-text text-8xl font-black select-none">NB</span>
-              </div>
-              <div className="border-accent/20 absolute inset-0 rounded-2xl border" />
-              <div className="absolute right-0 bottom-4 left-0 flex justify-center">
-                <span className="border-border/60 bg-card/80 text-muted rounded-full border px-3 py-1 font-mono text-[10px] backdrop-blur-sm">
-                  {t("photoAlt")}
-                </span>
+              {/* Glow border */}
+              <div className="from-accent/40 absolute -inset-0.5 rounded-2xl bg-gradient-to-br via-transparent to-cyan-500/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+              <div className="border-accent/20 relative h-full w-full overflow-hidden rounded-2xl border">
+                <Image
+                  src="/images/nikola.png"
+                  alt={t("photoAlt")}
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 300px, 340px"
+                  priority
+                />
+                {/* Subtle gradient at bottom for readability */}
+                <div className="from-card/60 absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t to-transparent" />
               </div>
             </div>
           </div>
