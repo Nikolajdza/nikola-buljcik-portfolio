@@ -71,5 +71,33 @@
     "curve": "Contribution à Curve — une app fintech innovante consolidant plusieurs cartes de paiement, avec gestion des cartes, historique et cashback.",
     "pricebee": "Développement d'un outil de gestion des prix pour l'industrie des matériaux de construction avec des algorithmes dynamiques et des visualisations.",
     "newsagg": "Création d'une app d'agrégation de nouvelles avec des critiques personnalisées, des composants responsifs et la récupération de données en temps réel."
+  },
+  "Contact": {
+    "label": "Contact",
+    "heading": "Travaillons ensemble",
+    "subheading": "Ouvert à de nouvelles opportunités, projets freelance et collaborations intéressantes. Envoyez-moi un message — je réponds généralement sous 24 heures.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "De quoi s'agit-il ?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet ou idée...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successBody": "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+    "errorMsg": "Quelque chose s'est mal passé. Veuillez m'écrire directement par email.",
+    "orReachOut": "Ou contactez-moi directement",
+    "emailMe": "Email",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "locationLabel": "Localisation",
+    "locationValue": "Novi Sad, Serbie",
+    "availableLabel": "Disponibilité",
+    "availableValue": "Ouvert aux opportunités",
+    "responseLabel": "Délai de réponse",
+    "responseValue": "Sous 24 heures"
   }
 }

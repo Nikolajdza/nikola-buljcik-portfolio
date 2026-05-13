@@ -71,5 +71,33 @@
     "curve": "Contribución a Curve — una innovadora app fintech que consolida múltiples tarjetas de pago con gestión de tarjetas, historial y cashback.",
     "pricebee": "Desarrollo de una herramienta de gestión de precios para la industria de materiales de construcción con algoritmos dinámicos y visualizaciones.",
     "newsagg": "Creación de una app de agregación de noticias con reseñas personalizadas, componentes responsivos y obtención de datos en tiempo real."
+  },
+  "Contact": {
+    "label": "Contacto",
+    "heading": "Trabajemos juntos",
+    "subheading": "Abierto a nuevas oportunidades, proyectos freelance y colaboraciones interesantes. Envíame un mensaje — generalmente respondo en menos de 24 horas.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "tu@email.com",
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "¿De qué se trata?",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame más sobre tu proyecto o idea...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successBody": "Gracias por contactarme. Te responderé pronto.",
+    "errorMsg": "Algo salió mal. Por favor escríbeme directamente al correo.",
+    "orReachOut": "O contáctame directamente",
+    "emailMe": "Correo",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "locationLabel": "Ubicación",
+    "locationValue": "Novi Sad, Serbia",
+    "availableLabel": "Disponibilidad",
+    "availableValue": "Abierto a oportunidades",
+    "responseLabel": "Tiempo de respuesta",
+    "responseValue": "Menos de 24 horas"
   }
 }

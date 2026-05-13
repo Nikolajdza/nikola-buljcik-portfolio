@@ -2,6 +2,7 @@ import { GraduationCap } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
+import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
 import { experience, education } from "@/data/experience";
 import type { ExperienceItem } from "@/data/experience";
 import { cn } from "@/lib/utils";
@@ -28,48 +29,52 @@ export async function ExperienceSection() {
   return (
     <section id="experience" className="border-border border-t py-28">
       <Container>
-        <SectionHeader index="02" label={t("label")} heading={t("heading")} />
+        <FadeIn>
+          <SectionHeader index="02" label={t("label")} heading={t("heading")} />
+        </FadeIn>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
           <div className="from-accent/50 via-border absolute top-0 left-0 hidden h-full w-px bg-gradient-to-b to-transparent md:block" />
 
-          <div className="space-y-10 md:pl-8">
+          <FadeInStagger className="space-y-10 md:pl-8" staggerDelay={0.12}>
             {experience.map((item) => (
-              <ExperienceCard
-                key={item.id}
-                item={item}
-                presentLabel={t("present")}
-                bulletCount={DESCRIPTION_COUNTS[item.id] ?? 2}
-                getDescription={(i) => {
-                  const key = `${item.descriptionKey}_${i}` as Parameters<typeof t>[0];
-                  return t(key);
-                }}
-              />
+              <FadeInItem key={item.id} from="right">
+                <ExperienceCard
+                  item={item}
+                  presentLabel={t("present")}
+                  bulletCount={DESCRIPTION_COUNTS[item.id] ?? 2}
+                  getDescription={(i) => {
+                    const key = `${item.descriptionKey}_${i}` as Parameters<typeof t>[0];
+                    return t(key);
+                  }}
+                />
+              </FadeInItem>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
 
         {/* Education */}
-        <div className="mt-24">
+        <FadeIn delay={0.1} className="mt-24">
           <h3 className="text-foreground mb-8 flex items-center gap-2 text-xl font-semibold">
             <GraduationCap size={20} className="text-accent" />
             {t("educationHeading")}
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <FadeInStagger className="grid gap-4 sm:grid-cols-2">
             {education.map((item) => (
-              <div
-                key={item.id}
-                className="border-border bg-card hover:border-accent/30 rounded-2xl border p-6 transition-colors"
-              >
-                <p className="text-accent mb-1 font-mono text-xs">{item.period}</p>
-                <h4 className="text-foreground mb-1 font-semibold">{item.institution}</h4>
-                <p className="text-muted text-sm">{item.degree}</p>
-              </div>
+              <FadeInItem key={item.id}>
+                <div className="border-border bg-card hover:border-accent/30 rounded-2xl border p-6 transition-colors">
+                  <p className="text-accent mb-1 font-mono text-xs">{item.period}</p>
+                  <h4 className="text-foreground mb-1 font-semibold">
+                    {item.institution}
+                  </h4>
+                  <p className="text-muted text-sm">{item.degree}</p>
+                </div>
+              </FadeInItem>
             ))}
-          </div>
-        </div>
+          </FadeInStagger>
+        </FadeIn>
       </Container>
     </section>
   );

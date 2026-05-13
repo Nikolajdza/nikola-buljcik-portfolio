@@ -30,7 +30,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     id: "itengine",
-    company: "IT Engine",
+    company: "Vega IT",
     project: "Curve — fintech",
     role: "Software Engineer",
     period: "2022 — 2023",
@@ -60,7 +60,8 @@ export const experience: ExperienceItem[] = [
   },
   {
     id: "vegait",
-    company: "Vega IT",
+    company: "IT Engine",
+    project: "News Aggregation App",
     role: "Software Engineer",
     period: "2020 — 2022",
     from: "2020-01-01",

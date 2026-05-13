@@ -7,6 +7,7 @@ import { HeroCodeCard } from "@/components/HeroCodeCard";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -129,14 +130,8 @@ export default async function HomePage({ params }: Props) {
       {/* ── Projects ─────────────────────────────────────────────────── */}
       <ProjectsSection />
 
-      {/* ── Contact placeholder ──────────────────────────────────────── */}
-      <section id="contact" className="border-border border-t py-28" aria-label="Contact">
-        <Container>
-          <p className="text-muted text-center font-mono text-sm">
-            {"// contact — coming next step"}
-          </p>
-        </Container>
-      </section>
+      {/* ── Contact ──────────────────────────────────────────────────── */}
+      <ContactSection />
     </>
   );
 }

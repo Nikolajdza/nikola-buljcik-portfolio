@@ -71,5 +71,33 @@
     "curve": "Doprinos razvoju Curve aplikacije — inovativne fintech aplikacije koja objedinjuje više platnih kartica sa upravljanjem karticama i cashback UI-jem.",
     "pricebee": "Razvoj alata za upravljanje cenama za industriju građevinskih materijala sa dinamičkim algoritmima i vizualizacijom podataka.",
     "newsagg": "Kreiranje aplikacije za agregaciju vesti sa personalizovanim recenzijama, responzivnim komponentama i real-time preuzimanjem podataka."
+  },
+  "Contact": {
+    "label": "Kontakt",
+    "heading": "Hajde da sarađujemo",
+    "subheading": "Otvoren sam za nove prilike, freelance projekte i zanimljive saradnje. Pošalji mi poruku — obično odgovorim unutar 24 sata.",
+    "nameLabel": "Ime",
+    "namePlaceholder": "Vaše ime",
+    "emailLabel": "Email",
+    "emailPlaceholder": "vas@email.com",
+    "subjectLabel": "Naslov",
+    "subjectPlaceholder": "O čemu se radi?",
+    "messageLabel": "Poruka",
+    "messagePlaceholder": "Recite mi više o vašem projektu ili ideji...",
+    "send": "Pošalji poruku",
+    "sending": "Slanje...",
+    "successTitle": "Poruka poslata!",
+    "successBody": "Hvala što ste se javili. Odgovorim uskoro.",
+    "errorMsg": "Nešto nije prošlo. Molim pišite mi direktno na email.",
+    "orReachOut": "Ili stupite u kontakt direktno",
+    "emailMe": "Email",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "locationLabel": "Lokacija",
+    "locationValue": "Novi Sad, Srbija",
+    "availableLabel": "Dostupnost",
+    "availableValue": "Otvoren za prilike",
+    "responseLabel": "Vreme odgovora",
+    "responseValue": "Unutar 24 sata"
   }
 }

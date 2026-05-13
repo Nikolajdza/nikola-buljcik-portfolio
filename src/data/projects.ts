@@ -22,7 +22,7 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: "curve",
-    company: "IT Engine",
+    company: "Vega IT",
     name: "Curve — Fintech App",
     year: "2022 — 2023",
     descriptionKey: "curve",
@@ -48,7 +48,7 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: "newsagg",
-    company: "Vega IT",
+    company: "IT Engine",
     name: "News Aggregation App",
     year: "2020 — 2022",
     descriptionKey: "newsagg",

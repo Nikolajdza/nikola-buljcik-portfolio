@@ -4,6 +4,7 @@ import type { ComponentType } from "react";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
+import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
 import { skillCategories } from "@/data/skills";
 
 function GitHubIcon({ size = 15 }: { size?: number }) {
@@ -63,70 +64,88 @@ export async function AboutSection() {
   return (
     <section id="about" className="py-28">
       <Container>
-        <SectionHeader index="01" label={t("label")} heading={t("heading")} />
+        <FadeIn>
+          <SectionHeader index="01" label={t("label")} heading={t("heading")} />
+        </FadeIn>
 
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_340px]">
           {/* ── Left: bio + facts + skills ──────────────────────────── */}
           <div className="flex flex-col gap-10">
-            <p className="text-foreground/80 max-w-prose text-lg leading-relaxed">
-              {t("bio")}
-            </p>
+            <FadeIn delay={0.1}>
+              <p className="text-foreground/80 max-w-prose text-lg leading-relaxed">
+                {t("bio")}
+              </p>
+            </FadeIn>
 
             {/* Quick facts */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <Fact
-                icon={<MapPin size={15} />}
-                label={t("locationLabel")}
-                value={t("locationValue")}
-              />
-              <Fact label={t("availabilityLabel")} value={t("availabilityValue")} dot />
-              <Fact label={t("experienceLabel")} value={t("experienceValue")} />
-            </div>
+            <FadeInStagger className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <FadeInItem>
+                <Fact
+                  icon={<MapPin size={15} />}
+                  label={t("locationLabel")}
+                  value={t("locationValue")}
+                />
+              </FadeInItem>
+              <FadeInItem>
+                <Fact label={t("availabilityLabel")} value={t("availabilityValue")} dot />
+              </FadeInItem>
+              <FadeInItem>
+                <Fact label={t("experienceLabel")} value={t("experienceValue")} />
+              </FadeInItem>
+            </FadeInStagger>
 
             {/* Social links */}
-            <div className="flex flex-wrap gap-3">
-              {SOCIALS.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="border-border text-muted hover:border-accent/50 hover:text-foreground flex items-center gap-2 rounded-xl border px-4 py-2 text-sm transition-colors"
-                >
-                  <Icon size={15} />
-                  {label}
-                </a>
-              ))}
-            </div>
-
-            {/* Skills */}
-            <div className="space-y-5">
-              <h3 className="text-foreground font-semibold">{t("skillsHeading")}</h3>
-              <div className="space-y-4">
-                {skillCategories.map((cat) => (
-                  <div key={cat.id}>
-                    <p className="text-muted mb-2 font-mono text-[10px] tracking-widest uppercase">
-                      {skillLabelMap[cat.id]}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {cat.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="border-border bg-card text-foreground/80 hover:border-accent/40 hover:text-accent rounded-lg border px-3 py-1 text-xs font-medium transition-colors"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <FadeIn delay={0.15}>
+              <div className="flex flex-wrap gap-3">
+                {SOCIALS.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="border-border text-muted hover:border-accent/50 hover:text-foreground flex items-center gap-2 rounded-xl border px-4 py-2 text-sm transition-colors"
+                  >
+                    <Icon size={15} />
+                    {label}
+                  </a>
                 ))}
               </div>
-            </div>
+            </FadeIn>
+
+            {/* Skills */}
+            <FadeIn delay={0.2}>
+              <div className="space-y-5">
+                <h3 className="text-foreground font-semibold">{t("skillsHeading")}</h3>
+                <div className="space-y-4">
+                  {skillCategories.map((cat) => (
+                    <div key={cat.id}>
+                      <p className="text-muted mb-2 font-mono text-[10px] tracking-widest uppercase">
+                        {skillLabelMap[cat.id]}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {cat.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="border-border bg-card text-foreground/80 hover:border-accent/40 hover:text-accent rounded-lg border px-3 py-1 text-xs font-medium transition-colors"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
 
           {/* ── Right: profile photo ─────────────────────────────────── */}
-          <div className="flex justify-center lg:justify-start">
+          <FadeIn
+            from="left"
+            delay={0.05}
+            className="flex justify-center lg:justify-start"
+          >
             <div
               className="group relative w-full max-w-[300px] overflow-hidden rounded-2xl lg:max-w-full"
               style={{ aspectRatio: "3 / 4" }}
@@ -147,7 +166,7 @@ export async function AboutSection() {
                 <div className="from-card/60 absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t to-transparent" />
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>

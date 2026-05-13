@@ -2,6 +2,7 @@ import { ExternalLink, Lock, Star } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
+import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
 import { featuredProjects } from "@/data/projects";
 import type { FeaturedProject } from "@/data/projects";
 import { getGitHubRepos, LANGUAGE_COLORS } from "@/lib/github";
@@ -17,50 +18,58 @@ export async function ProjectsSection() {
   return (
     <section id="projects" className="border-border border-t py-28">
       <Container>
-        <SectionHeader index="03" label={t("label")} heading={t("heading")} />
+        <FadeIn>
+          <SectionHeader index="03" label={t("label")} heading={t("heading")} />
+        </FadeIn>
 
         {/* ── Featured work ────────────────────────────────────────── */}
         <div className="mb-20">
-          <SubHeading>
-            <Lock size={15} className="text-accent" />
-            {t("featuredHeading")}
-            <span className="border-border text-muted ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[10px]">
-              {t("featuredNote")}
-            </span>
-          </SubHeading>
+          <FadeIn delay={0.05}>
+            <SubHeading>
+              <Lock size={15} className="text-accent" />
+              {t("featuredHeading")}
+              <span className="border-border text-muted ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[10px]">
+                {t("featuredNote")}
+              </span>
+            </SubHeading>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <FadeInStagger className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {featuredProjects.map((project) => (
-              <FeaturedCard
-                key={project.id}
-                project={project}
-                description={t(project.descriptionKey as Parameters<typeof t>[0])}
-              />
+              <FadeInItem key={project.id}>
+                <FeaturedCard
+                  project={project}
+                  description={t(project.descriptionKey as Parameters<typeof t>[0])}
+                />
+              </FadeInItem>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
 
         {/* ── GitHub repos ─────────────────────────────────────────── */}
         {repos.length > 0 && (
           <div>
-            <SubHeading>
-              <GitHubIcon />
-              {t("githubHeading")}
-              <span className="text-muted ml-2 text-sm font-normal">
-                {t("githubSubtitle")}
-              </span>
-            </SubHeading>
+            <FadeIn delay={0.05}>
+              <SubHeading>
+                <GitHubIcon />
+                {t("githubHeading")}
+                <span className="text-muted ml-2 text-sm font-normal">
+                  {t("githubSubtitle")}
+                </span>
+              </SubHeading>
+            </FadeIn>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <FadeInStagger className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {repos.map((repo) => (
-                <RepoCard
-                  key={repo.id}
-                  repo={repo}
-                  noDescLabel={t("noDescription")}
-                  viewLabel={t("viewOnGitHub")}
-                />
+                <FadeInItem key={repo.id}>
+                  <RepoCard
+                    repo={repo}
+                    noDescLabel={t("noDescription")}
+                    viewLabel={t("viewOnGitHub")}
+                  />
+                </FadeInItem>
               ))}
-            </div>
+            </FadeInStagger>
           </div>
         )}
       </Container>
