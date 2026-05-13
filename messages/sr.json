@@ -1,0 +1,14 @@
+{
+  "LocaleLayout": {
+    "title": "Nikola Buljčik — Portfolio",
+    "description": "Softverski inženjer fokusiran na moderan frontend razvoj."
+  },
+  "HomePage": {
+    "title": "Portfolio",
+    "subtitle": "Softverski inženjer · Frontend · React i Next.js",
+    "body": "Sajt je u izradi. Korak po korak gradimo višejezički portfolio."
+  },
+  "LocaleSwitcher": {
+    "label": "Jezik"
+  }
+}

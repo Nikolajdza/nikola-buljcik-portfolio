@@ -1,0 +1,14 @@
+{
+  "LocaleLayout": {
+    "title": "Nikola Buljčik — Portfolio",
+    "description": "Ingénieur logiciel axé sur le développement frontend moderne."
+  },
+  "HomePage": {
+    "title": "Portfolio",
+    "subtitle": "Ingénieur logiciel · Frontend · React et Next.js",
+    "body": "Ce site est en construction. Nous construisons un portfolio multilingue étape par étape."
+  },
+  "LocaleSwitcher": {
+    "label": "Langue"
+  }
+}
