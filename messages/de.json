@@ -17,6 +17,38 @@
     "cta_projects": "Projekte ansehen",
     "cta_contact": "Kontakt aufnehmen"
   },
+  "About": {
+    "label": "Über mich",
+    "heading": "Über mich",
+    "bio": "Softwareingenieur mit Erfahrung in der Entwicklung robuster, skalierbarer Lösungen, der in funktionsübergreifenden Teams zusammenarbeitet, um innovative Anwendungen zu liefern. Vertraut mit modernen Technologien und agilen Methoden, leidenschaftlich für eleganten Code.",
+    "locationLabel": "Standort",
+    "locationValue": "Belgrad, Serbien",
+    "availabilityLabel": "Status",
+    "availabilityValue": "Offen für neue Möglichkeiten",
+    "experienceLabel": "Erfahrung",
+    "experienceValue": "5+ Jahre",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Kenntnisse & Technologien",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Mobil",
+    "skillBackend": "Backend",
+    "skillTools": "Werkzeuge"
+  },
+  "Experience": {
+    "label": "Erfahrung",
+    "heading": "Berufserfahrung",
+    "present": "Heute",
+    "educationHeading": "Ausbildung",
+    "candescent_0": "Entwicklung des Frontends für eine umfassende digitale Banking-Plattform.",
+    "candescent_1": "Implementierung komplexer Funktionen für Online-Transaktionen, Kontoverwaltung und Finanzanalyse.",
+    "candescent_2": "Erstellung wiederverwendbarer Komponentenbibliotheken mit Material-UI.",
+    "itengine_0": "Mitarbeit an der Frontend-Entwicklung von Curve, einer innovativen Fintech-App.",
+    "itengine_1": "Implementierung von Benutzeroberflächen für Kartenverwaltung, Transaktionshistorie und Cashback.",
+    "pricebee_0": "Entwicklung eines Preismanagement-Tools für die Bauindustrie.",
+    "pricebee_1": "Implementierung dynamischer Preisalgorithmen und branchenspezifischer Datenvisualisierungen.",
+    "vegait_0": "Entwicklung einer News-Aggregations-App mit personalisierten Medienrezensionen.",
+    "vegait_1": "Erstellung responsiver UI-Komponenten und Implementierung von Echtzeit-Datenabruf."
+  },
   "LocaleSwitcher": {
     "label": "Sprache",
     "en": "English",

@@ -17,6 +17,38 @@
     "cta_projects": "Vedi Progetti",
     "cta_contact": "Contattami"
   },
+  "About": {
+    "label": "Chi sono",
+    "heading": "Chi sono",
+    "bio": "Ingegnere del software con esperienza nello sviluppo di soluzioni robuste e scalabili, collaborando con team multidisciplinari per consegnare applicazioni innovative. Competente in tecnologie moderne e metodologie agili, appassionato di creare codice elegante.",
+    "locationLabel": "Posizione",
+    "locationValue": "Belgrado, Serbia",
+    "availabilityLabel": "Stato",
+    "availabilityValue": "Aperto a nuove opportunità",
+    "experienceLabel": "Esperienza",
+    "experienceValue": "5+ anni",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Competenze e Tecnologie",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Mobile",
+    "skillBackend": "Backend",
+    "skillTools": "Strumenti"
+  },
+  "Experience": {
+    "label": "Esperienza",
+    "heading": "Esperienza Lavorativa",
+    "present": "Presente",
+    "educationHeading": "Istruzione",
+    "candescent_0": "Sviluppo del frontend per una piattaforma bancaria digitale completa.",
+    "candescent_1": "Implementazione di funzionalità complesse per transazioni online, gestione dei conti e analisi finanziaria.",
+    "candescent_2": "Creazione di librerie di componenti riutilizzabili con Material-UI.",
+    "itengine_0": "Contribuito allo sviluppo frontend di Curve, un'app fintech innovativa.",
+    "itengine_1": "Implementato interfacce utente per la gestione delle carte, la cronologia delle transazioni e il cashback.",
+    "pricebee_0": "Sviluppato un sofisticato strumento di gestione dei prezzi per l'industria dei materiali da costruzione.",
+    "pricebee_1": "Implementato algoritmi dinamici di pricing e visualizzazioni di dati specifici del settore.",
+    "vegait_0": "Creata un'app di aggregazione di notizie con recensioni di media personalizzate.",
+    "vegait_1": "Costruiti componenti UI responsivi e implementato il recupero di dati in tempo reale."
+  },
   "LocaleSwitcher": {
     "label": "Lingua",
     "en": "English",

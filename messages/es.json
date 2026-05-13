@@ -17,6 +17,38 @@
     "cta_projects": "Ver Proyectos",
     "cta_contact": "Contáctame"
   },
+  "About": {
+    "label": "Sobre mí",
+    "heading": "Sobre mí",
+    "bio": "Ingeniero de software con experiencia en el desarrollo de soluciones robustas y escalables, colaborando con equipos multidisciplinarios para entregar aplicaciones innovadoras. Competente en tecnologías modernas y metodologías ágiles, apasionado por crear código elegante.",
+    "locationLabel": "Ubicación",
+    "locationValue": "Belgrado, Serbia",
+    "availabilityLabel": "Estado",
+    "availabilityValue": "Abierto a nuevas oportunidades",
+    "experienceLabel": "Experiencia",
+    "experienceValue": "5+ años",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Habilidades y Tecnologías",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Móvil",
+    "skillBackend": "Backend",
+    "skillTools": "Herramientas"
+  },
+  "Experience": {
+    "label": "Experiencia",
+    "heading": "Experiencia Laboral",
+    "present": "Presente",
+    "educationHeading": "Educación",
+    "candescent_0": "Desarrollando el frontend para una plataforma integral de banca digital.",
+    "candescent_1": "Implementando funcionalidades complejas para transacciones en línea, gestión de cuentas y análisis financiero.",
+    "candescent_2": "Creando bibliotecas de componentes reutilizables con Material-UI.",
+    "itengine_0": "Contribuí al desarrollo frontend de Curve, una aplicación fintech innovadora.",
+    "itengine_1": "Implementé interfaces de usuario para gestión de tarjetas, historial de transacciones y cashback.",
+    "pricebee_0": "Desarrollé una herramienta sofisticada de gestión de precios para la industria de materiales de construcción.",
+    "pricebee_1": "Implementé algoritmos dinámicos de precios y visualizaciones de datos específicos del sector.",
+    "vegait_0": "Creé una aplicación de agregación de noticias con reseñas de medios personalizadas.",
+    "vegait_1": "Construí componentes de UI responsivos e implementé la obtención de datos en tiempo real."
+  },
   "LocaleSwitcher": {
     "label": "Idioma",
     "en": "English",

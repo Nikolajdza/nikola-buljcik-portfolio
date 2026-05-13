@@ -17,6 +17,38 @@
     "cta_projects": "Projekti",
     "cta_contact": "Stupite u kontakt"
   },
+  "About": {
+    "label": "O meni",
+    "heading": "O meni",
+    "bio": "Softverski inženjer sa iskustvom u razvoju robusnih i skalabilnih rešenja, u saradnji sa multidisciplinarnim timovima radi isporuke inovativnih aplikacija. Stručan u modernim tehnologijama i agilnim metodologijama, sa strašću ka kreiranju elegantnog koda za softverske inovacije.",
+    "locationLabel": "Lokacija",
+    "locationValue": "Beograd, Srbija",
+    "availabilityLabel": "Status",
+    "availabilityValue": "Otvoren za nove prilike",
+    "experienceLabel": "Iskustvo",
+    "experienceValue": "5+ godina",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Veštine i tehnologije",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Mobilni",
+    "skillBackend": "Backend",
+    "skillTools": "Alati"
+  },
+  "Experience": {
+    "label": "Iskustvo",
+    "heading": "Radno iskustvo",
+    "present": "Danas",
+    "educationHeading": "Obrazovanje",
+    "candescent_0": "Razvoj frontenda za sveobuhvatnu platformu digitalnog bankarstva.",
+    "candescent_1": "Implementacija složenih funkcionalnosti za online transakcije, upravljanje računima i finansijsku analitiku.",
+    "candescent_2": "Kreiranje biblioteka komponenti za konzistentan korisnički interfejs koristeći Material-UI.",
+    "itengine_0": "Doprinos frontend razvoju aplikacije Curve — inovativne fintech aplikacije koja objedinjuje više platnih kartica.",
+    "itengine_1": "Implementacija korisničkih interfejsa za upravljanje karticama, istoriju transakcija i cashback funkcionalnosti.",
+    "pricebee_0": "Razvoj sofisticiranog alata za upravljanje cenama u industriji građevinskih materijala.",
+    "pricebee_1": "Implementacija dinamičkih algoritama za formiranje cena i vizualizacija podataka specifičnih za industriju.",
+    "vegait_0": "Kreiranje aplikacije za agregaciju vesti sa personalizovanim recenzijama medijskog sadržaja.",
+    "vegait_1": "Izgradnja responzivnih UI komponenti i implementacija real-time preuzimanja podataka."
+  },
   "LocaleSwitcher": {
     "label": "Jezik",
     "en": "English",

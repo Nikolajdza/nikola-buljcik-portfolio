@@ -17,6 +17,38 @@
     "cta_projects": "View Projects",
     "cta_contact": "Get in touch"
   },
+  "About": {
+    "label": "About",
+    "heading": "About Me",
+    "bio": "Software engineer experienced in developing robust, scalable solutions, collaborating with cross-functional teams to deliver innovative applications. Proficient in modern technologies, agile methodologies and passionate about creating elegant code for software innovations.",
+    "locationLabel": "Location",
+    "locationValue": "Belgrade, Serbia",
+    "availabilityLabel": "Status",
+    "availabilityValue": "Open to new opportunities",
+    "experienceLabel": "Experience",
+    "experienceValue": "5+ years",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Skills & Technologies",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Mobile",
+    "skillBackend": "Backend",
+    "skillTools": "Tools"
+  },
+  "Experience": {
+    "label": "Experience",
+    "heading": "Work Experience",
+    "present": "Present",
+    "educationHeading": "Education",
+    "candescent_0": "Developing frontend for a comprehensive digital banking platform.",
+    "candescent_1": "Implementing complex features for online transactions, account management, and financial analytics.",
+    "candescent_2": "Creating reusable component libraries with Material-UI for consistent user experience.",
+    "itengine_0": "Contributed to the frontend development of Curve, an innovative fintech app that consolidates multiple payment cards.",
+    "itengine_1": "Implemented user interfaces for card management, transaction history, and cashback features.",
+    "pricebee_0": "Engineered a sophisticated pricing management tool for the construction materials industry.",
+    "pricebee_1": "Implemented dynamic pricing algorithms and industry-specific data visualizations.",
+    "vegait_0": "Created a news aggregation app with personalized media reviews.",
+    "vegait_1": "Built responsive UI components and implemented real-time data fetching."
+  },
   "LocaleSwitcher": {
     "label": "Language",
     "en": "English",

@@ -3,6 +3,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -16,7 +18,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden">
         {/* Dot grid background */}
         <div className="dot-grid absolute inset-0 opacity-60" />
@@ -37,7 +39,7 @@ export default async function HomePage({ params }: Props) {
           }}
         />
         <div
-          className="animate-blob animation-delay-4000 absolute top-1/3 left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full opacity-8 blur-3xl"
+          className="animate-blob animation-delay-4000 absolute top-1/3 left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full opacity-[0.08] blur-3xl"
           style={{
             background:
               "radial-gradient(circle, #a78bfa 0%, #7c3aed 50%, transparent 70%)",
@@ -73,7 +75,7 @@ export default async function HomePage({ params }: Props) {
               {t("role")}
             </p>
 
-            {/* Tech stack */}
+            {/* Stack */}
             <p className="text-muted mb-10 font-mono text-sm tracking-wider md:text-base">
               {t("stack")}
             </p>
@@ -106,42 +108,32 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      <section id="about" className="border-border border-t py-32" aria-label="About">
-        <Container>
-          <p className="text-muted text-center font-mono text-sm">
-            {"// about — coming next"}
-          </p>
-        </Container>
-      </section>
+      {/* ── About ────────────────────────────────────────────────────── */}
+      <div className="border-border border-t">
+        <AboutSection />
+      </div>
 
-      <section
-        id="experience"
-        className="border-border border-t py-32"
-        aria-label="Experience"
-      >
-        <Container>
-          <p className="text-muted text-center font-mono text-sm">
-            {"// experience — coming next"}
-          </p>
-        </Container>
-      </section>
+      {/* ── Experience ───────────────────────────────────────────────── */}
+      <ExperienceSection />
 
+      {/* ── Projects placeholder ─────────────────────────────────────── */}
       <section
         id="projects"
-        className="border-border border-t py-32"
+        className="border-border border-t py-28"
         aria-label="Projects"
       >
         <Container>
           <p className="text-muted text-center font-mono text-sm">
-            {"// projects — coming next"}
+            {"// projects — coming next step"}
           </p>
         </Container>
       </section>
 
-      <section id="contact" className="border-border border-t py-32" aria-label="Contact">
+      {/* ── Contact placeholder ──────────────────────────────────────── */}
+      <section id="contact" className="border-border border-t py-28" aria-label="Contact">
         <Container>
           <p className="text-muted text-center font-mono text-sm">
-            {"// contact — coming next"}
+            {"// contact — coming next step"}
           </p>
         </Container>
       </section>

@@ -17,6 +17,38 @@
     "cta_projects": "Voir les projets",
     "cta_contact": "Me contacter"
   },
+  "About": {
+    "label": "À propos",
+    "heading": "À propos de moi",
+    "bio": "Ingénieur logiciel expérimenté dans le développement de solutions robustes et évolutives, collaborant avec des équipes pluridisciplinaires pour livrer des applications innovantes. Maîtrise des technologies modernes et des méthodologies agiles, passionné par la création de code élégant.",
+    "locationLabel": "Localisation",
+    "locationValue": "Belgrade, Serbie",
+    "availabilityLabel": "Statut",
+    "availabilityValue": "Ouvert à de nouvelles opportunités",
+    "experienceLabel": "Expérience",
+    "experienceValue": "5+ ans",
+    "photoAlt": "Nikola Buljčik",
+    "skillsHeading": "Compétences & Technologies",
+    "skillFrontend": "Frontend",
+    "skillMobile": "Mobile",
+    "skillBackend": "Backend",
+    "skillTools": "Outils"
+  },
+  "Experience": {
+    "label": "Expérience",
+    "heading": "Expérience Professionnelle",
+    "present": "Présent",
+    "educationHeading": "Formation",
+    "candescent_0": "Développement du frontend pour une plateforme bancaire numérique complète.",
+    "candescent_1": "Implémentation de fonctionnalités complexes pour les transactions en ligne, la gestion de comptes et l'analyse financière.",
+    "candescent_2": "Création de bibliothèques de composants réutilisables avec Material-UI.",
+    "itengine_0": "Contribution au développement frontend de Curve, une application fintech innovante.",
+    "itengine_1": "Implémentation d'interfaces utilisateur pour la gestion des cartes, l'historique des transactions et le cashback.",
+    "pricebee_0": "Développement d'un outil sophistiqué de gestion des prix pour l'industrie des matériaux de construction.",
+    "pricebee_1": "Implémentation d'algorithmes de tarification dynamiques et de visualisations de données sectorielles.",
+    "vegait_0": "Création d'une application d'agrégation de nouvelles avec des critiques médias personnalisées.",
+    "vegait_1": "Construction de composants UI responsifs et implémentation de la récupération de données en temps réel."
+  },
   "LocaleSwitcher": {
     "label": "Langue",
     "en": "English",
