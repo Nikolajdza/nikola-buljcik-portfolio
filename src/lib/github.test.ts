@@ -1,0 +1,98 @@
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import { getGitHubRepos, LANGUAGE_COLORS } from "./github";
+
+describe("LANGUAGE_COLORS", () => {
+  it("should have TypeScript color", () => {
+    expect(LANGUAGE_COLORS.TypeScript).toBe("#3178c6");
+  });
+
+  it("should have JavaScript color", () => {
+    expect(LANGUAGE_COLORS.JavaScript).toBe("#f1e05a");
+  });
+});
+
+describe("getGitHubRepos", () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("should return repos filtered by non-fork", async () => {
+    const mockRepos = [
+      {
+        id: 1,
+        name: "repo-a",
+        fork: false,
+        stargazers_count: 5,
+        updated_at: "2024-01-01",
+      },
+      {
+        id: 2,
+        name: "repo-b",
+        fork: true,
+        stargazers_count: 0,
+        updated_at: "2024-01-01",
+      },
+      {
+        id: 3,
+        name: "repo-c",
+        fork: false,
+        stargazers_count: 2,
+        updated_at: "2024-01-01",
+      },
+    ];
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => mockRepos,
+      }),
+    );
+
+    const result = await getGitHubRepos("testuser");
+    expect(result).toHaveLength(2);
+    expect(result.every((r) => !r.fork)).toBe(true);
+  });
+
+  it("should sort repos by stars descending", async () => {
+    const mockRepos = [
+      {
+        id: 1,
+        name: "low-stars",
+        fork: false,
+        stargazers_count: 1,
+        updated_at: "2024-01-01",
+      },
+      {
+        id: 2,
+        name: "high-stars",
+        fork: false,
+        stargazers_count: 10,
+        updated_at: "2024-01-01",
+      },
+    ];
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => mockRepos,
+      }),
+    );
+
+    const result = await getGitHubRepos("testuser");
+    expect(result[0].name).toBe("high-stars");
+  });
+
+  it("should return empty array on non-ok response", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false }));
+    const result = await getGitHubRepos("testuser");
+    expect(result).toEqual([]);
+  });
+
+  it("should return empty array on network error", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("Network error")));
+    const result = await getGitHubRepos("testuser");
+    expect(result).toEqual([]);
+  });
+});

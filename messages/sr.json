@@ -57,5 +57,19 @@
     "fr": "Français",
     "sr": "Srpski",
     "de": "Deutsch"
+  },
+  "Projects": {
+    "label": "Projekti",
+    "heading": "Rad i projekti",
+    "featuredHeading": "Istaknuti radovi",
+    "featuredNote": "Privatni kod · NDA",
+    "githubHeading": "Open Source",
+    "githubSubtitle": "Javni repozitorijumi na GitHub-u",
+    "noDescription": "Nema opisa",
+    "viewOnGitHub": "Pogledaj na GitHub-u",
+    "banking": "Razvoj frontenda za sveobuhvatnu platformu digitalnog bankarstva sa kompleksnim funkcionalnostima za transakcije, upravljanje računima i finansijsku analitiku.",
+    "curve": "Doprinos razvoju Curve aplikacije — inovativne fintech aplikacije koja objedinjuje više platnih kartica sa upravljanjem karticama i cashback UI-jem.",
+    "pricebee": "Razvoj alata za upravljanje cenama za industriju građevinskih materijala sa dinamičkim algoritmima i vizualizacijom podataka.",
+    "newsagg": "Kreiranje aplikacije za agregaciju vesti sa personalizovanim recenzijama, responzivnim komponentama i real-time preuzimanjem podataka."
   }
 }

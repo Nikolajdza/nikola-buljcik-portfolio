@@ -57,5 +57,19 @@
     "fr": "Français",
     "sr": "Srpski",
     "de": "Deutsch"
+  },
+  "Projects": {
+    "label": "Proyectos",
+    "heading": "Trabajo y Proyectos",
+    "featuredHeading": "Trabajo Destacado",
+    "featuredNote": "Código privado · NDA",
+    "githubHeading": "Open Source",
+    "githubSubtitle": "Repositorios públicos en GitHub",
+    "noDescription": "Sin descripción",
+    "viewOnGitHub": "Ver en GitHub",
+    "banking": "Desarrollo del frontend para una plataforma integral de banca digital con funciones complejas para transacciones, gestión de cuentas y análisis financiero.",
+    "curve": "Contribución a Curve — una innovadora app fintech que consolida múltiples tarjetas de pago con gestión de tarjetas, historial y cashback.",
+    "pricebee": "Desarrollo de una herramienta de gestión de precios para la industria de materiales de construcción con algoritmos dinámicos y visualizaciones.",
+    "newsagg": "Creación de una app de agregación de noticias con reseñas personalizadas, componentes responsivos y obtención de datos en tiempo real."
   }
 }
