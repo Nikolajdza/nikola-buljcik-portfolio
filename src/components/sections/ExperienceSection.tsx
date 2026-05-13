@@ -27,7 +27,7 @@ export async function ExperienceSection() {
   const t = await getTranslations("Experience");
 
   return (
-    <section id="experience" className="border-border border-t py-28">
+    <section id="experience" className="py-28">
       <Container>
         <FadeIn>
           <SectionHeader index="02" label={t("label")} heading={t("heading")} />

@@ -15,6 +15,7 @@ export const PERSONAL = {
   linkedin: "https://www.linkedin.com/in/nikola-buljcik-4aab65205",
   location: "Novi Sad, Serbia",
 
-  /** Google Drive PDF link — replace with your actual link */
-  cvUrl: "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing",
+  /** Google Drive “Anyone with the link” — opens PDF in Drive viewer */
+  cvUrl:
+    "https://drive.google.com/file/d/18HYZXDPnBWnzkU-603_WHUhZ6Cdkmq2F/view?usp=sharing",
 } as const;

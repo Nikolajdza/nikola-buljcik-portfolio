@@ -101,17 +101,19 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ── About ────────────────────────────────────────────────────── */}
-      <div className="border-border border-t">
-        <AboutSection />
-      </div>
+      <div className="section-divider" />
+      <AboutSection />
 
       {/* ── Experience ───────────────────────────────────────────────── */}
+      <div className="section-divider" />
       <ExperienceSection />
 
       {/* ── Projects ─────────────────────────────────────────────────── */}
+      <div className="section-divider" />
       <ProjectsSection />
 
       {/* ── Contact ──────────────────────────────────────────────────── */}
+      <div className="section-divider" />
       <ContactSection />
     </>
   );

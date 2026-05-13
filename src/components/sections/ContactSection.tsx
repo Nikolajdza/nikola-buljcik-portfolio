@@ -36,7 +36,7 @@ export async function ContactSection() {
   };
 
   return (
-    <section id="contact" className="border-border border-t py-28">
+    <section id="contact" className="py-28">
       <Container>
         <FadeIn>
           <SectionHeader index="04" label={t("label")} heading={labels.heading} />

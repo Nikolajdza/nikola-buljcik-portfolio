@@ -16,7 +16,7 @@ export async function ProjectsSection() {
   const repos = await getGitHubRepos(GITHUB_USERNAME);
 
   return (
-    <section id="projects" className="border-border border-t py-28">
+    <section id="projects" className="py-28">
       <Container>
         <FadeIn>
           <SectionHeader index="03" label={t("label")} heading={t("heading")} />

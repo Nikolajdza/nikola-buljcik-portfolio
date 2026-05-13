@@ -47,7 +47,7 @@ export function HeroCodeCard() {
 
           <CodeLine indent>
             <Prop>location</Prop>
-            <Pun>:</Pun> <Str>&quot;Belgrade, Serbia&quot;</Str>
+            <Pun>:</Pun> <Str>&quot;Novi Sad, Serbia&quot;</Str>
             <Pun>,</Pun>
           </CodeLine>
 
@@ -82,6 +82,14 @@ export function HeroCodeCard() {
 
           <CodeLine>
             <Pun>{"}"}</Pun>
+          </CodeLine>
+
+          {/* Blinking cursor on last line */}
+          <CodeLine>
+            <span
+              className="cursor-blink bg-accent/70 ml-0.5 inline-block h-4 w-2 rounded-sm align-middle"
+              aria-hidden="true"
+            />
           </CodeLine>
         </div>
 

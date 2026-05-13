@@ -6,6 +6,8 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,6 +103,8 @@ export default async function LocaleLayout({ children, params }: Props) {
 
             <Header />
             <main className="pt-16">{children}</main>
+            <Footer />
+            <ScrollToTop />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
