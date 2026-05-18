@@ -1,4 +1,9 @@
-import { PINNED_REPO_FALLBACKS, PINNED_REPO_NAMES } from "@/config/github-repos";
+import {
+  getRepoDescription,
+  getRepoStackTags,
+  PINNED_REPO_FALLBACKS,
+  PINNED_REPO_NAMES,
+} from "@/config/github-repos";
 
 export interface GitHubRepo {
   id: number;
@@ -6,11 +11,23 @@ export interface GitHubRepo {
   description: string | null;
   html_url: string;
   language: string | null;
+  /** Framework + language chips for the UI */
+  stack: string[];
   stargazers_count: number;
   forks_count: number;
   updated_at: string;
   fork: boolean;
   topics: string[];
+}
+
+function withStack(
+  repo: Omit<GitHubRepo, "stack"> & { stack?: string[]; description?: string | null },
+): GitHubRepo {
+  return {
+    ...repo,
+    description: getRepoDescription(repo),
+    stack: repo.stack ?? getRepoStackTags(repo),
+  };
 }
 
 /** Language → GitHub brand hex color */
@@ -48,6 +65,7 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
 
     const filtered = data
       .filter((repo) => !repo.fork && !EXCLUDED.has(repo.name))
+      .map((repo) => withStack(repo))
       .sort((a, b) => b.stargazers_count - a.stargazers_count);
 
     return applyPinnedRepos(filtered);
@@ -62,11 +80,14 @@ export function applyPinnedRepos(repos: GitHubRepo[]): GitHubRepo[] {
 
   const pinned: GitHubRepo[] = [];
   for (const name of PINNED_REPO_NAMES) {
-    pinned.push(byName.get(name) ?? PINNED_REPO_FALLBACKS[name]);
+    const repo = byName.get(name) ?? PINNED_REPO_FALLBACKS[name];
+    pinned.push(withStack(repo));
   }
 
   const pinnedSet = new Set<string>(PINNED_REPO_NAMES);
-  const rest = repos.filter((repo) => !pinnedSet.has(repo.name));
+  const rest = repos
+    .filter((repo) => !pinnedSet.has(repo.name))
+    .map((repo) => withStack(repo));
 
   return [...pinned, ...rest];
 }

@@ -109,6 +109,7 @@ describe("applyPinnedRepos", () => {
         description: null,
         html_url: "https://github.com/Nikolajdza/game-hub",
         language: "TypeScript",
+        stack: ["React", "TypeScript"],
         stargazers_count: 3,
         forks_count: 0,
         updated_at: "2024-01-01",
@@ -120,5 +121,6 @@ describe("applyPinnedRepos", () => {
     const result = applyPinnedRepos(repos);
     expect(result[0].name).toBe("booking-api-rest");
     expect(result[0].html_url).toBe("https://github.com/Nikolajdza/booking-api-rest");
+    expect(result[0].stack).toEqual(["NestJS", "TypeScript"]);
   });
 });

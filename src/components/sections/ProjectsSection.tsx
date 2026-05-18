@@ -150,8 +150,6 @@ function RepoCard({
   noDescLabel: string;
   viewLabel: string;
 }) {
-  const langColor = repo.language ? (LANGUAGE_COLORS[repo.language] ?? "#8b8b8b") : null;
-
   return (
     <a
       href={repo.html_url}
@@ -179,20 +177,40 @@ function RepoCard({
         {repo.description ?? noDescLabel}
       </p>
 
-      {/* Footer: language + stars */}
-      <div className="flex items-center justify-between gap-2">
-        {langColor && repo.language && (
-          <span className="text-muted flex items-center gap-1.5 text-xs">
-            <span
-              className="h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: langColor }}
-              aria-hidden="true"
-            />
-            {repo.language}
-          </span>
-        )}
+      {/* Footer: stack tags + stars */}
+      <div className="flex items-end justify-between gap-2">
+        <div className="flex flex-wrap gap-1.5">
+          {repo.stack.map((tag) => {
+            const isLanguage = tag === repo.language;
+            const dotColor =
+              isLanguage && repo.language
+                ? (LANGUAGE_COLORS[repo.language] ?? "#8b8b8b")
+                : null;
+
+            return (
+              <span
+                key={tag}
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-mono text-[10px]",
+                  isLanguage
+                    ? "border-border/70 bg-muted-bg text-muted"
+                    : "border-accent/35 bg-accent/10 text-accent",
+                )}
+              >
+                {dotColor && (
+                  <span
+                    className="h-1.5 w-1.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: dotColor }}
+                    aria-hidden="true"
+                  />
+                )}
+                {tag}
+              </span>
+            );
+          })}
+        </div>
         {repo.stargazers_count > 0 && (
-          <span className="text-muted ml-auto flex items-center gap-1 font-mono text-xs">
+          <span className="text-muted ml-auto flex shrink-0 items-center gap-1 font-mono text-xs">
             <Star size={11} />
             {repo.stargazers_count}
           </span>
