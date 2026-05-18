@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { getGitHubRepos, LANGUAGE_COLORS } from "./github";
+import { applyPinnedRepos, getGitHubRepos, LANGUAGE_COLORS } from "./github";
+import type { GitHubRepo } from "./github";
 
 describe("LANGUAGE_COLORS", () => {
   it("should have TypeScript color", () => {
@@ -50,8 +51,9 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(2);
+    expect(result).toHaveLength(3); // 2 from API + pinned booking-api-rest
     expect(result.every((r) => !r.fork)).toBe(true);
+    expect(result[0].name).toBe("booking-api-rest");
   });
 
   it("should sort repos by stars descending", async () => {
@@ -81,7 +83,8 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result[0].name).toBe("high-stars");
+    expect(result[0].name).toBe("booking-api-rest");
+    expect(result[1].name).toBe("high-stars");
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -94,5 +97,28 @@ describe("getGitHubRepos", () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("Network error")));
     const result = await getGitHubRepos("testuser");
     expect(result).toEqual([]);
+  });
+});
+
+describe("applyPinnedRepos", () => {
+  it("puts booking-api-rest first with GitHub URL", () => {
+    const repos: GitHubRepo[] = [
+      {
+        id: 1,
+        name: "game-hub",
+        description: null,
+        html_url: "https://github.com/Nikolajdza/game-hub",
+        language: "TypeScript",
+        stargazers_count: 3,
+        forks_count: 0,
+        updated_at: "2024-01-01",
+        fork: false,
+        topics: [],
+      },
+    ];
+
+    const result = applyPinnedRepos(repos);
+    expect(result[0].name).toBe("booking-api-rest");
+    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/booking-api-rest");
   });
 });

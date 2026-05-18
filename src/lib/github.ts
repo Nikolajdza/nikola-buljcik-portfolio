@@ -1,3 +1,5 @@
+import { PINNED_REPO_FALLBACKS, PINNED_REPO_NAMES } from "@/config/github-repos";
+
 export interface GitHubRepo {
   id: number;
   name: string;
@@ -44,10 +46,27 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
 
     const EXCLUDED = new Set(["Blog-Website", "Flutter-shop-app"]);
 
-    return data
+    const filtered = data
       .filter((repo) => !repo.fork && !EXCLUDED.has(repo.name))
       .sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+    return applyPinnedRepos(filtered);
   } catch {
     return [];
   }
+}
+
+/** Pinned repos first; use API data when available, else fallback config */
+export function applyPinnedRepos(repos: GitHubRepo[]): GitHubRepo[] {
+  const byName = new Map(repos.map((repo) => [repo.name, repo]));
+
+  const pinned: GitHubRepo[] = [];
+  for (const name of PINNED_REPO_NAMES) {
+    pinned.push(byName.get(name) ?? PINNED_REPO_FALLBACKS[name]);
+  }
+
+  const pinnedSet = new Set<string>(PINNED_REPO_NAMES);
+  const rest = repos.filter((repo) => !pinnedSet.has(repo.name));
+
+  return [...pinned, ...rest];
 }
