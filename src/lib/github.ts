@@ -61,7 +61,11 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
 
     const data: GitHubRepo[] = await res.json();
 
-    const EXCLUDED = new Set(["Blog-Website", "Flutter-shop-app"]);
+    const EXCLUDED = new Set([
+      "Blog-Website",
+      "Flutter-shop-app",
+      "booking-api-frontend",
+    ]);
 
     const filtered = data
       .filter((repo) => !repo.fork && !EXCLUDED.has(repo.name))
