@@ -1,13 +1,14 @@
 import type { GitHubRepo } from "@/lib/github";
 
 /** Repo names shown first in Open Source (order preserved) */
-export const PINNED_REPO_NAMES = ["booking-api-rest"] as const;
+export const PINNED_REPO_NAMES = ["booking", "booking-api-rest"] as const;
 
 /**
  * Main stack per repo — framework/platform first, language last.
  * GitHub only exposes `language` (e.g. TypeScript); we add the meaningful layer.
  */
 export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
+  booking: ["Next.js", "TypeScript"],
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
   "API-Playground": ["React", "TypeScript"],
@@ -19,6 +20,8 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
 
 /** Optional copy when GitHub repo has no description (add entries as you go) */
 export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
+  booking:
+    "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
   // "API-Playground": "…",
   // "nikola-buljcik-portfolio": "…",
 };
@@ -40,6 +43,20 @@ export function getRepoDescription(
 
 /** Fallback when API list is stale or repo is very new */
 export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepo> = {
+  booking: {
+    id: 9_000,
+    name: "booking",
+    description:
+      "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
+    html_url: "https://github.com/Nikolajdza/booking",
+    language: "TypeScript",
+    stack: ["Next.js", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "typescript", "tailwindcss"],
+  },
   "booking-api-rest": {
     id: 9_001,
     name: "booking-api-rest",

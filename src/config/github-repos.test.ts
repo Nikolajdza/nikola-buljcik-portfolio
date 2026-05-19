@@ -3,6 +3,10 @@ import { getRepoDescription, getRepoStackTags } from "./github-repos";
 
 describe("getRepoStackTags", () => {
   it("returns framework + language for known repos", () => {
+    expect(getRepoStackTags({ name: "booking", language: "TypeScript" })).toEqual([
+      "Next.js",
+      "TypeScript",
+    ]);
     expect(
       getRepoStackTags({ name: "booking-api-rest", language: "TypeScript" }),
     ).toEqual(["NestJS", "TypeScript"]);

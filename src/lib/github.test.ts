@@ -51,9 +51,10 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(3); // 2 from API + pinned booking-api-rest
+    expect(result).toHaveLength(4); // 2 from API + 2 pinned (booking, booking-api-rest)
     expect(result.every((r) => !r.fork)).toBe(true);
-    expect(result[0].name).toBe("booking-api-rest");
+    expect(result[0].name).toBe("booking");
+    expect(result[1].name).toBe("booking-api-rest");
   });
 
   it("should sort repos by stars descending", async () => {
@@ -83,8 +84,9 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result[0].name).toBe("booking-api-rest");
-    expect(result[1].name).toBe("high-stars");
+    expect(result[0].name).toBe("booking");
+    expect(result[1].name).toBe("booking-api-rest");
+    expect(result[2].name).toBe("high-stars");
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -101,7 +103,7 @@ describe("getGitHubRepos", () => {
 });
 
 describe("applyPinnedRepos", () => {
-  it("puts booking-api-rest first with GitHub URL", () => {
+  it("puts booking first, then booking-api-rest", () => {
     const repos: GitHubRepo[] = [
       {
         id: 1,
@@ -119,8 +121,10 @@ describe("applyPinnedRepos", () => {
     ];
 
     const result = applyPinnedRepos(repos);
-    expect(result[0].name).toBe("booking-api-rest");
-    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/booking-api-rest");
-    expect(result[0].stack).toEqual(["NestJS", "TypeScript"]);
+    expect(result[0].name).toBe("booking");
+    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/booking");
+    expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[1].name).toBe("booking-api-rest");
+    expect(result[1].stack).toEqual(["NestJS", "TypeScript"]);
   });
 });
