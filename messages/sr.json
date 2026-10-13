@@ -1,7 +1,7 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Softverski inženjer fokusiran na moderan frontend razvoj. React, Next.js, TypeScript."
+    "description": "Viši frontend inženjer specijalizovan za React, Next.js i TypeScript."
   },
   "Nav": {
     "about": "O meni",
@@ -12,7 +12,7 @@
   "Hero": {
     "badge": "Dostupan za nove prilike",
     "greeting": "Zdravo, ja sam",
-    "role": "Softverski inženjer i Frontend Developer",
+    "role": "Viši Frontend Inženjer",
     "stack": "React · Next.js · TypeScript · Node.js",
     "cta_projects": "Projekti",
     "cta_contact": "Stupite u kontakt",
@@ -21,13 +21,13 @@
   "About": {
     "label": "O meni",
     "heading": "O meni",
-    "bio": "Softverski inženjer sa iskustvom u razvoju robusnih i skalabilnih rešenja, u saradnji sa multidisciplinarnim timovima radi isporuke inovativnih aplikacija. Stručan u modernim tehnologijama i agilnim metodologijama, sa strašću ka kreiranju elegantnog koda za softverske inovacije.",
+    "bio": "Frontend inženjer specijalizovan za React, Next.js i TypeScript za web aplikacije okrenute korisnicima. U Candescentu sam gradio višekratne UI komponente i zajedničke biblioteke za proizvode digitalnog bankarstva. U Bezimeni IT-u sam vodio frontend arhitekturu sportske streaming platforme i mentoririsao dva frontend inženjera.",
     "locationLabel": "Lokacija",
     "locationValue": "Beograd, Srbija",
     "availabilityLabel": "Status",
     "availabilityValue": "Otvoren za nove prilike",
     "experienceLabel": "Iskustvo",
-    "experienceValue": "5+ godina",
+    "experienceValue": "6+ godina",
     "photoAlt": "Nikola Buljčik",
     "skillsHeading": "Veštine i tehnologije",
     "skillFrontend": "Frontend",
@@ -41,15 +41,21 @@
     "heading": "Radno iskustvo",
     "present": "Danas",
     "educationHeading": "Obrazovanje",
-    "candescent_0": "Razvoj frontenda za sveobuhvatnu platformu digitalnog bankarstva.",
-    "candescent_1": "Implementacija složenih funkcionalnosti za online transakcije, upravljanje računima i finansijsku analitiku.",
-    "candescent_2": "Kreiranje biblioteka komponenti za konzistentan korisnički interfejs koristeći Material-UI.",
-    "itengine_0": "Doprinos frontend razvoju aplikacije Curve — inovativne fintech aplikacije koja objedinjuje više platnih kartica.",
-    "itengine_1": "Implementacija korisničkih interfejsa za upravljanje karticama, istoriju transakcija i cashback funkcionalnosti.",
-    "pricebee_0": "Razvoj sofisticiranog alata za upravljanje cenama u industriji građevinskih materijala.",
-    "pricebee_1": "Implementacija dinamičkih algoritama za formiranje cena i vizualizacija podataka specifičnih za industriju.",
-    "vegait_0": "Kreiranje aplikacije za agregaciju vesti sa personalizovanim recenzijama medijskog sadržaja.",
-    "vegait_1": "Izgradnja responzivnih UI komponenti i implementacija real-time preuzimanja podataka."
+    "candescent_0": "Razvijao i održavao digitalne bankarske proizvode za banke i kreditne unije u SAD-u i Evropi.",
+    "candescent_1": "Implementirao funkcionalnosti za korisnike i bezbedne finansijske tokove, uključujući upravljanje računima i transakcijama.",
+    "candescent_2": "Izgradio višekratne UI komponente i zajedničke biblioteke sa Material-UI za konzistentnost kroz produkt.",
+    "candescent_3": "Integrisao REST API-je i sarađivao sa backend inženjerima na isporuci funkcionalnosti.",
+    "smsparking_0": "Razvio web i mobilnu platformu za plaćanje parkinga za holandsko tržište, sa pronalaženjem zona i digitalnim plaćanjem.",
+    "smsparking_1": "Izgradio funkcionalnosti za zonsko parkiranje, lokacijske usluge i tokove plaćanja u React i Flutter aplikacijama.",
+    "bezimeni_0": "Donosio tehničke odluke i vodio frontend arhitekturu za streaming platformu britanskog sportskog klijenta.",
+    "bezimeni_1": "Vodio i tehnički mentoririsao dva frontend inženjera kroz arhitekturske smernice i preglede koda.",
+    "bezimeni_2": "Gradio responzivne interfejse za pretraživanje, filtriranje i gledanje video sadržaja sa komponentama za reprodukciju medija.",
+    "itengine_0": "Razvijao funkcionalnosti za personalizovani tok vesti, izbor tema i video sadržaj; vršio refaktorisanje i održavanje.",
+    "itengine_1": "Razvijao aplikaciju za praćenje procesa proizvodnje i nabavke.",
+    "pricebee_0": "Razvijao frontend funkcionalnosti za dinamičko formiranje cena i interaktivne vizualizacije podataka za platformu za upravljanje cenama.",
+    "pricebee_1": "Aktivno učestvovao u migraciji sa JavaScript-a na TypeScript, uključujući tipizaciju i standarde kvaliteta koda.",
+    "vegait_0": "Razvio novu fintech aplikaciju i održavao postojeću platformu, isporučujući funkcionalnosti, višekratne UI komponente i animacije.",
+    "vegait_1": "Integrisao frontend tokove sa GraphQL-om; radio na platnim karticama, istoriji transakcija, cashback-u i Contentful sadržaju."
   },
   "LocaleSwitcher": {
     "label": "Jezik",
@@ -69,10 +75,13 @@
     "githubSubtitle": "Javni repozitorijumi na GitHub-u",
     "noDescription": "Nema opisa",
     "viewOnGitHub": "Pogledaj na GitHub-u",
-    "banking": "Razvoj frontenda za sveobuhvatnu platformu digitalnog bankarstva sa kompleksnim funkcionalnostima za transakcije, upravljanje računima i finansijsku analitiku.",
-    "curve": "Doprinos razvoju Curve aplikacije — inovativne fintech aplikacije koja objedinjuje više platnih kartica sa upravljanjem karticama i cashback UI-jem.",
-    "pricebee": "Razvoj alata za upravljanje cenama za industriju građevinskih materijala sa dinamičkim algoritmima i vizualizacijom podataka.",
-    "newsagg": "Kreiranje aplikacije za agregaciju vesti sa personalizovanim recenzijama, responzivnim komponentama i real-time preuzimanjem podataka."
+    "banking": "Razvijao i održavao digitalne bankarske proizvode za banke i kreditne unije u SAD-u i Evropi — upravljanje računima, transakcije, višekratne biblioteke komponenti.",
+    "curve": "Doprinos razvoju Curve aplikacije — inovativne fintech platforme koja objedinjuje više platnih kartica sa upravljanjem karticama i cashback UI-jem.",
+    "pricebee": "Razvio platformu za upravljanje cenama sa dinamičkim algoritmima, interaktivnim vizualizacijama i migracijom na TypeScript.",
+    "newsagg": "Kreirao aplikaciju za agregaciju vesti sa personalizovanim sadržajem, izborom tema, video funkcijama i real-time preuzimanjem podataka.",
+    "streaming": "Vodio frontend sportske streaming platforme za britanskog klijenta — pretraga, filtriranje i reprodukcija videa, sa Next.js arhitekturom i React Query keširanjem.",
+    "parking": "Izgradio web i mobilnu platformu za plaćanje parkinga za holandsko tržište — pretraga zona, lokacijske usluge i digitalno plaćanje u React i Flutter aplikacijama.",
+    "production": "Razvio aplikaciju za praćenje procesa proizvodnje i nabavke."
   },
   "Contact": {
     "label": "Kontakt",
@@ -96,7 +105,7 @@
     "linkedIn": "LinkedIn",
     "github": "GitHub",
     "locationLabel": "Lokacija",
-    "locationValue": "Novi Sad, Srbija",
+    "locationValue": "Beograd, Srbija",
     "availableLabel": "Dostupnost",
     "availableValue": "Otvoren za prilike",
     "responseLabel": "Vreme odgovora",

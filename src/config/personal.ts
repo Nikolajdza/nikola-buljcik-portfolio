@@ -17,5 +17,5 @@ export const PERSONAL = {
 
   /** Google Drive “Anyone with the link” — opens PDF in Drive viewer */
   cvUrl:
-    "https://drive.google.com/file/d/18HYZXDPnBWnzkU-603_WHUhZ6Cdkmq2F/view?usp=sharing",
+    "https://drive.google.com/file/d/1O3690M6jLJRDP-16GxSE6MDJe7zUEU7Y/view?usp=sharing",
 } as const;

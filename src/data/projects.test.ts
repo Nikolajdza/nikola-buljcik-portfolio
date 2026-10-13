@@ -2,8 +2,8 @@ import { describe, it, expect } from "vitest";
 import { featuredProjects } from "./projects";
 
 describe("featuredProjects", () => {
-  it("should have 4 featured projects", () => {
-    expect(featuredProjects).toHaveLength(4);
+  it("should have 7 featured projects", () => {
+    expect(featuredProjects).toHaveLength(7);
   });
 
   it("each project should have required fields", () => {

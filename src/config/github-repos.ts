@@ -1,7 +1,7 @@
 import type { GitHubRepo } from "@/lib/github";
 
 /** Repo names shown first in Open Source (order preserved) */
-export const PINNED_REPO_NAMES = ["booking", "booking-api-rest"] as const;
+export const PINNED_REPO_NAMES = ["booking", "booking-api-rest", "company"] as const;
 
 /**
  * Main stack per repo — framework/platform first, language last.
@@ -11,6 +11,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
   booking: ["Next.js", "TypeScript"],
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
+  company: ["Next.js", "TypeScript"],
   "API-Playground": ["React", "TypeScript"],
   "game-hub": ["React", "TypeScript"],
   "issue-tracker": ["Next.js", "TypeScript"],
@@ -22,6 +23,8 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
 export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
   booking:
     "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
+  company:
+    "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
   // "API-Playground": "…",
   // "nikola-buljcik-portfolio": "…",
 };
@@ -70,5 +73,19 @@ export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepo> = {
     updated_at: "2026-01-01T00:00:00Z",
     fork: false,
     topics: ["nestjs", "typescript", "postgresql", "stripe"],
+  },
+  company: {
+    id: 9_002,
+    name: "company",
+    description:
+      "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
+    html_url: "https://github.com/Nikolajdza/company",
+    language: "TypeScript",
+    stack: ["Next.js", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "typescript", "tailwindcss"],
   },
 };

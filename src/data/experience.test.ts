@@ -2,17 +2,15 @@ import { describe, expect, it } from "vitest";
 import { experience, education } from "./experience";
 
 describe("experience data", () => {
-  it("has 4 entries sorted newest first", () => {
-    expect(experience).toHaveLength(4);
+  it("has 6 entries sorted newest first", () => {
+    expect(experience).toHaveLength(6);
     expect(experience[0].id).toBe("candescent");
     expect(experience[experience.length - 1].id).toBe("vegait");
   });
 
-  it("marks only Candescent as current", () => {
+  it("has no current entries (all positions ended)", () => {
     const current = experience.filter((e) => e.current);
-    expect(current).toHaveLength(1);
-    expect(current[0].id).toBe("candescent");
-    expect(current[0].to).toBeNull();
+    expect(current).toHaveLength(0);
   });
 
   it("every entry has a non-empty technologies array", () => {
@@ -33,9 +31,10 @@ describe("education data", () => {
     expect(education).toHaveLength(2);
   });
 
-  it("FTN main degree spans 2014–2020", () => {
+  it("FTN main degree starts in 2014 with no end year", () => {
     const ftn = education.find((e) => e.id === "ftn-main");
     expect(ftn?.from).toBe("2014");
-    expect(ftn?.to).toBe("2020");
+    expect(ftn?.to).toBe("");
+    expect(ftn?.period).toBe("2014 —");
   });
 });

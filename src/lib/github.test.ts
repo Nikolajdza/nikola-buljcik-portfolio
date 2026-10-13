@@ -51,10 +51,11 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(4); // 2 from API + 2 pinned (booking, booking-api-rest)
+    expect(result).toHaveLength(5); // 2 from API + 3 pinned (booking, booking-api-rest, company)
     expect(result.every((r) => !r.fork)).toBe(true);
     expect(result[0].name).toBe("booking");
     expect(result[1].name).toBe("booking-api-rest");
+    expect(result[2].name).toBe("company");
   });
 
   it("should sort repos by stars descending", async () => {
@@ -86,7 +87,8 @@ describe("getGitHubRepos", () => {
     const result = await getGitHubRepos("testuser");
     expect(result[0].name).toBe("booking");
     expect(result[1].name).toBe("booking-api-rest");
-    expect(result[2].name).toBe("high-stars");
+    expect(result[2].name).toBe("company");
+    expect(result[3].name).toBe("high-stars");
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -126,5 +128,8 @@ describe("applyPinnedRepos", () => {
     expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
     expect(result[1].name).toBe("booking-api-rest");
     expect(result[1].stack).toEqual(["NestJS", "TypeScript"]);
+    expect(result[2].name).toBe("company");
+    expect(result[2].html_url).toBe("https://github.com/Nikolajdza/company");
+    expect(result[2].stack).toEqual(["Next.js", "TypeScript"]);
   });
 });

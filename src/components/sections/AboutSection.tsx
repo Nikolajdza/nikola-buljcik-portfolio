@@ -161,7 +161,7 @@ export async function AboutSection() {
 
               <div className="border-accent/20 relative h-full w-full overflow-hidden rounded-2xl border">
                 <Image
-                  src="/images/nikola.png"
+                  src="/images/nikola.jpg"
                   alt={t("photoAlt")}
                   fill
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"

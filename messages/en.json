@@ -1,7 +1,7 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Software engineer focused on modern frontend development. React, Next.js, TypeScript."
+    "description": "Senior Frontend Engineer specializing in React, Next.js, and TypeScript."
   },
   "Nav": {
     "about": "About",
@@ -12,7 +12,7 @@
   "Hero": {
     "badge": "Available for opportunities",
     "greeting": "Hi, I'm",
-    "role": "Software Engineer & Frontend Developer",
+    "role": "Senior Frontend Engineer",
     "stack": "React · Next.js · TypeScript · Node.js",
     "cta_projects": "View Projects",
     "cta_contact": "Get in touch",
@@ -21,13 +21,13 @@
   "About": {
     "label": "About",
     "heading": "About Me",
-    "bio": "Software engineer experienced in developing robust, scalable solutions, collaborating with cross-functional teams to deliver innovative applications. Proficient in modern technologies, agile methodologies and passionate about creating elegant code for software innovations.",
+    "bio": "Frontend Engineer specializing in React, Next.js, and TypeScript for customer-facing web applications. At Candescent, built reusable UI components and shared libraries for digital banking products. At Bezimeni IT, led the frontend architecture of a UK sports streaming platform and technically mentored two frontend engineers.",
     "locationLabel": "Location",
     "locationValue": "Belgrade, Serbia",
     "availabilityLabel": "Status",
     "availabilityValue": "Open to new opportunities",
     "experienceLabel": "Experience",
-    "experienceValue": "5+ years",
+    "experienceValue": "6+ years",
     "photoAlt": "Nikola Buljčik",
     "skillsHeading": "Skills & Technologies",
     "skillFrontend": "Frontend",
@@ -41,15 +41,21 @@
     "heading": "Work Experience",
     "present": "Present",
     "educationHeading": "Education",
-    "candescent_0": "Developing frontend for a comprehensive digital banking platform.",
-    "candescent_1": "Implementing complex features for online transactions, account management, and financial analytics.",
-    "candescent_2": "Creating reusable component libraries with Material-UI for consistent user experience.",
-    "itengine_0": "Contributed to the frontend development of Curve, an innovative fintech app that consolidates multiple payment cards.",
-    "itengine_1": "Implemented user interfaces for card management, transaction history, and cashback features.",
-    "pricebee_0": "Engineered a sophisticated pricing management tool for the construction materials industry.",
-    "pricebee_1": "Implemented dynamic pricing algorithms and industry-specific data visualizations.",
-    "vegait_0": "Created a news aggregation app with personalized media reviews.",
-    "vegait_1": "Built responsive UI components and implemented real-time data fetching."
+    "candescent_0": "Developed and maintained digital banking products for banks and credit unions in the United States and Europe.",
+    "candescent_1": "Implemented customer-facing features and secure financial workflows, including account management and transactions.",
+    "candescent_2": "Built reusable UI components and shared libraries with Material-UI to improve consistency across product features.",
+    "candescent_3": "Integrated REST APIs and collaborated closely with backend engineers on feature delivery.",
+    "smsparking_0": "Developed a web and mobile parking payment platform for the Dutch market, enabling users to find zones and pay digitally.",
+    "smsparking_1": "Built features for zone-based parking, location services, and payment flows across React and Flutter applications.",
+    "bezimeni_0": "Made technical decisions and led the frontend architecture for a UK sports streaming platform.",
+    "bezimeni_1": "Led and technically mentored two frontend engineers through architecture guidance and code reviews.",
+    "bezimeni_2": "Built responsive interfaces for browsing, filtering, and viewing video content with reusable media playback components.",
+    "itengine_0": "Developed features for a personalized news feed, topic and content selection, and video content; performed refactoring and maintenance.",
+    "itengine_1": "Developed an application for tracking production and procurement processes.",
+    "pricebee_0": "Developed frontend functionality for dynamic pricing and interactive data visualizations for a pricing-management platform.",
+    "pricebee_1": "Actively participated in the JavaScript-to-TypeScript migration, including typing and code-quality standards.",
+    "vegait_0": "Developed a new fintech application and maintained an existing platform, delivering features, reusable UI components, and animations.",
+    "vegait_1": "Integrated frontend flows with GraphQL; worked on payment cards, transaction history, cashback, and Contentful-managed content."
   },
   "LocaleSwitcher": {
     "label": "Language",
@@ -69,10 +75,13 @@
     "githubSubtitle": "Public repositories on GitHub",
     "noDescription": "No description provided",
     "viewOnGitHub": "View on GitHub",
-    "banking": "Developing frontend for a comprehensive digital banking platform with complex features for transactions, account management, and financial analytics.",
+    "banking": "Developed and maintained digital banking products for banks and credit unions in the US and Europe — account management, transactions, reusable component libraries.",
     "curve": "Contributed to Curve — an innovative fintech app consolidating multiple payment cards with card management, transaction history, and cashback UI.",
-    "pricebee": "Engineered a pricing management tool for the construction materials industry with dynamic algorithms and industry-specific data visualizations.",
-    "newsagg": "Created a news aggregation app with personalized media reviews, responsive UI components, and real-time data fetching."
+    "pricebee": "Developed a pricing management platform with dynamic pricing algorithms, interactive data visualizations, and TypeScript migration.",
+    "newsagg": "Created a news aggregation app with personalized content, topic selection, video features, and real-time data fetching.",
+    "streaming": "Led the frontend of a UK sports streaming platform — browsing, filtering, and video playback, with a cleaner Next.js architecture and React Query caching.",
+    "parking": "Built a web and mobile parking payment platform for the Dutch market — zone search, location services, and digital payment across React and Flutter.",
+    "production": "Developed an application for tracking production and procurement processes."
   },
   "Contact": {
     "label": "Contact",
@@ -96,7 +105,7 @@
     "linkedIn": "LinkedIn",
     "github": "GitHub",
     "locationLabel": "Location",
-    "locationValue": "Novi Sad, Serbia",
+    "locationValue": "Belgrade, Serbia",
     "availableLabel": "Availability",
     "availableValue": "Open to opportunities",
     "responseLabel": "Response time",

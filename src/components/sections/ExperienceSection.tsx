@@ -9,7 +9,9 @@ import { cn } from "@/lib/utils";
 
 /** Maps data id to number of bullet points */
 const DESCRIPTION_COUNTS: Record<string, number> = {
-  candescent: 3,
+  candescent: 4,
+  smsparking: 2,
+  bezimeni: 3,
   itengine: 2,
   pricebee: 2,
   vegait: 2,
@@ -18,9 +20,11 @@ const DESCRIPTION_COUNTS: Record<string, number> = {
 /** Single color per company — muted but distinctive */
 const COMPANY_COLORS: Record<string, string> = {
   candescent: "from-violet-500/20 to-indigo-500/20",
-  itengine: "from-sky-500/20 to-cyan-500/20",
-  pricebee: "from-emerald-500/20 to-teal-500/20",
-  vegait: "from-orange-500/20 to-amber-500/20",
+  smsparking: "from-blue-500/20 to-sky-500/20",
+  bezimeni: "from-rose-500/20 to-pink-500/20",
+  itengine: "from-emerald-500/20 to-teal-500/20",
+  pricebee: "from-amber-500/20 to-yellow-500/20",
+  vegait: "from-orange-500/20 to-red-500/20",
 };
 
 export async function ExperienceSection() {
