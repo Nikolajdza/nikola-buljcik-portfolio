@@ -51,11 +51,12 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(5); // 2 from API + 3 pinned (booking, booking-api-rest, company)
+    expect(result).toHaveLength(6); // 2 from API + 4 pinned
     expect(result.every((r) => !r.fork)).toBe(true);
-    expect(result[0].name).toBe("booking");
-    expect(result[1].name).toBe("booking-api-rest");
-    expect(result[2].name).toBe("company");
+    expect(result[0].name).toBe("pulse-terminal");
+    expect(result[1].name).toBe("booking");
+    expect(result[2].name).toBe("booking-api-rest");
+    expect(result[3].name).toBe("company");
   });
 
   it("should sort repos by stars descending", async () => {
@@ -85,10 +86,11 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result[0].name).toBe("booking");
-    expect(result[1].name).toBe("booking-api-rest");
-    expect(result[2].name).toBe("company");
-    expect(result[3].name).toBe("high-stars");
+    expect(result[0].name).toBe("pulse-terminal");
+    expect(result[1].name).toBe("booking");
+    expect(result[2].name).toBe("booking-api-rest");
+    expect(result[3].name).toBe("company");
+    expect(result[4].name).toBe("high-stars");
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -105,7 +107,7 @@ describe("getGitHubRepos", () => {
 });
 
 describe("applyPinnedRepos", () => {
-  it("puts booking first, then booking-api-rest", () => {
+  it("puts pulse-terminal first, then the other pinned repos", () => {
     const repos: GitHubRepo[] = [
       {
         id: 1,
@@ -123,13 +125,16 @@ describe("applyPinnedRepos", () => {
     ];
 
     const result = applyPinnedRepos(repos);
-    expect(result[0].name).toBe("booking");
-    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/booking");
-    expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[1].name).toBe("booking-api-rest");
-    expect(result[1].stack).toEqual(["NestJS", "TypeScript"]);
-    expect(result[2].name).toBe("company");
-    expect(result[2].html_url).toBe("https://github.com/Nikolajdza/company");
-    expect(result[2].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[0].name).toBe("pulse-terminal");
+    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/pulse-terminal");
+    expect(result[0].stack).toEqual(["React", "TypeScript"]);
+    expect(result[1].name).toBe("booking");
+    expect(result[1].html_url).toBe("https://github.com/Nikolajdza/booking");
+    expect(result[1].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[2].name).toBe("booking-api-rest");
+    expect(result[2].stack).toEqual(["NestJS", "TypeScript"]);
+    expect(result[3].name).toBe("company");
+    expect(result[3].html_url).toBe("https://github.com/Nikolajdza/company");
+    expect(result[3].stack).toEqual(["Next.js", "TypeScript"]);
   });
 });

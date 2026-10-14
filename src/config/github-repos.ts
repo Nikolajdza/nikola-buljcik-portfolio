@@ -1,7 +1,12 @@
 import type { GitHubRepo } from "@/lib/github";
 
 /** Repo names shown first in Open Source (order preserved) */
-export const PINNED_REPO_NAMES = ["booking", "booking-api-rest", "company"] as const;
+export const PINNED_REPO_NAMES = [
+  "pulse-terminal",
+  "booking",
+  "booking-api-rest",
+  "company",
+] as const;
 
 /**
  * Main stack per repo — framework/platform first, language last.
@@ -12,6 +17,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
   company: ["Next.js", "TypeScript"],
+  "pulse-terminal": ["React", "TypeScript"],
   "API-Playground": ["React", "TypeScript"],
   "game-hub": ["React", "TypeScript"],
   "issue-tracker": ["Next.js", "TypeScript"],
@@ -25,6 +31,8 @@ export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
   company:
     "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
+  "pulse-terminal":
+    "Real-time crypto market terminal — Binance WebSocket streams, order book, virtualized trades, and a performance lab.",
   // "API-Playground": "…",
   // "nikola-buljcik-portfolio": "…",
 };
@@ -73,6 +81,20 @@ export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepo> = {
     updated_at: "2026-01-01T00:00:00Z",
     fork: false,
     topics: ["nestjs", "typescript", "postgresql", "stripe"],
+  },
+  "pulse-terminal": {
+    id: 9_003,
+    name: "pulse-terminal",
+    description:
+      "Real-time crypto market terminal — Binance WebSocket streams, order book, virtualized trades, and a performance lab.",
+    html_url: "https://github.com/Nikolajdza/pulse-terminal",
+    language: "TypeScript",
+    stack: ["React", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["react", "typescript", "websocket", "vite"],
   },
   company: {
     id: 9_002,
