@@ -2,6 +2,7 @@ import type { GitHubRepo } from "@/lib/github";
 
 /** Repo names shown first in Open Source (order preserved) */
 export const PINNED_REPO_NAMES = [
+  "ai-job-radar",
   "pulse-terminal",
   "booking",
   "booking-api-rest",
@@ -17,6 +18,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
   company: ["Next.js", "TypeScript"],
+  "ai-job-radar": ["Next.js", "TypeScript"],
   "pulse-terminal": ["React", "TypeScript"],
   "API-Playground": ["React", "TypeScript"],
   "game-hub": ["React", "TypeScript"],
@@ -31,6 +33,8 @@ export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
   company:
     "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
+  "ai-job-radar":
+    "AI job-search dashboard — Remotive sync, profile/CV matching, application tracking, and optional OpenAI analysis.",
   "pulse-terminal":
     "Real-time crypto market terminal — Binance WebSocket streams, order book, virtualized trades, and a performance lab.",
   // "API-Playground": "…",
@@ -54,6 +58,20 @@ export function getRepoDescription(
 
 /** Fallback when API list is stale or repo is very new */
 export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepo> = {
+  "ai-job-radar": {
+    id: 9_004,
+    name: "ai-job-radar",
+    description:
+      "AI job-search dashboard — Remotive sync, profile/CV matching, application tracking, and optional OpenAI analysis.",
+    html_url: "https://github.com/Nikolajdza/ai-job-radar",
+    language: "TypeScript",
+    stack: ["Next.js", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "typescript", "postgresql", "ai"],
+  },
   booking: {
     id: 9_000,
     name: "booking",
