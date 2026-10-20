@@ -124,16 +124,8 @@ export const education: EducationItem[] = [
     id: "ftn-main",
     institution: "Faculty of Technical Sciences (FTN)",
     degree: "Software Engineering & Information Technology",
-    period: "2014 —",
+    period: "Started 2014",
     from: "2014",
     to: "",
-  },
-  {
-    id: "ftn-courses",
-    institution: "FTN Informatika",
-    degree: "Java Web Development · Frontend Development",
-    period: "2021",
-    from: "2021",
-    to: "2021",
   },
 ];

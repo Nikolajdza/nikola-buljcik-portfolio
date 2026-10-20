@@ -21,7 +21,7 @@
   "About": {
     "label": "About",
     "heading": "About Me",
-    "bio": "Frontend Engineer specializing in React, Next.js, and TypeScript for customer-facing web applications. At Candescent, built reusable UI components and shared libraries for digital banking products. At Bezimeni IT, led the frontend architecture of a UK sports streaming platform and technically mentored two frontend engineers.",
+    "bio": "Frontend Engineer specializing in React, Next.js, and TypeScript for customer-facing web applications for enterprise and product workflows. At Candescent, built reusable UI components and shared libraries for digital banking products. At Bezimeni IT, made technical decisions and organized the frontend for a UK sports streaming platform, and led and technically mentored two frontend engineers.",
     "locationLabel": "Location",
     "locationValue": "Belgrade, Serbia",
     "availabilityLabel": "Status",
@@ -55,7 +55,10 @@
     "pricebee_0": "Developed frontend functionality for dynamic pricing and interactive data visualizations for a pricing-management platform.",
     "pricebee_1": "Actively participated in the JavaScript-to-TypeScript migration, including typing and code-quality standards.",
     "vegait_0": "Developed a new fintech application and maintained an existing platform, delivering features, reusable UI components, and animations.",
-    "vegait_1": "Integrated frontend flows with GraphQL; worked on payment cards, transaction history, cashback, and Contentful-managed content."
+    "vegait_1": "Integrated frontend flows with GraphQL; worked on payment cards, transaction history, cashback, and Contentful-managed content.",
+    "bezimeni_3": "Addressed slow loading and filtering of video content with a cleaner Next.js architecture and React Query caching.",
+    "smsparking_2": "Implemented responsive interfaces and reusable UI components with a focus on usability across web and mobile.",
+    "pricebee_2": "Built reusable components and optimized the application and data flow."
   },
   "LocaleSwitcher": {
     "label": "Language",

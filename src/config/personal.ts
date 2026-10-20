@@ -17,7 +17,6 @@ export const PERSONAL = {
   /** Years of professional experience shown in hero config card */
   experienceYears: 6,
 
-  /** Google Drive “Anyone with the link” — opens PDF in Drive viewer */
-  cvUrl:
-    "https://drive.google.com/file/d/1O3690M6jLJRDP-16GxSE6MDJe7zUEU7Y/view?usp=sharing",
+  /** Local CV download (also mirrored on Google Drive if needed) */
+  cvUrl: "/cv/Nikola_Buljcik_Resume.pdf",
 } as const;

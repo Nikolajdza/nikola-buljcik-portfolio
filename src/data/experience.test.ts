@@ -27,14 +27,14 @@ describe("experience data", () => {
 });
 
 describe("education data", () => {
-  it("has 2 entries", () => {
-    expect(education).toHaveLength(2);
+  it("has 1 entry matching the CV", () => {
+    expect(education).toHaveLength(1);
   });
 
   it("FTN main degree starts in 2014 with no end year", () => {
     const ftn = education.find((e) => e.id === "ftn-main");
     expect(ftn?.from).toBe("2014");
     expect(ftn?.to).toBe("");
-    expect(ftn?.period).toBe("2014 —");
+    expect(ftn?.period).toBe("Started 2014");
   });
 });

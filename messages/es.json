@@ -21,7 +21,7 @@
   "About": {
     "label": "Sobre mí",
     "heading": "Sobre mí",
-    "bio": "Ingeniero Frontend especializado en React, Next.js y TypeScript para aplicaciones web orientadas al usuario. En Candescent, construí componentes UI reutilizables y bibliotecas compartidas para productos de banca digital. En Bezimeni IT, lideré la arquitectura frontend de una plataforma de streaming deportivo británica y mentoricé a dos ingenieros frontend.",
+    "bio": "Ingeniero Frontend especializado en React, Next.js y TypeScript para aplicaciones web orientadas al usuario en flujos enterprise y de producto. En Candescent, construí componentes UI reutilizables y bibliotecas compartidas para banca digital. En Bezimeni IT, tomé decisiones técnicas, organicé el frontend de una plataforma de streaming deportivo del Reino Unido y mentoricé a dos ingenieros frontend.",
     "locationLabel": "Ubicación",
     "locationValue": "Belgrado, Serbia",
     "availabilityLabel": "Estado",
@@ -55,7 +55,10 @@
     "pricebee_0": "Desarrollé funcionalidades frontend para gestión dinámica de precios y visualizaciones de datos interactivas.",
     "pricebee_1": "Participé activamente en la migración de JavaScript a TypeScript, incluyendo tipado y estándares de calidad.",
     "vegait_0": "Desarrollé una nueva aplicación fintech y mantuve una plataforma existente con funcionalidades, componentes UI reutilizables y animaciones.",
-    "vegait_1": "Integré flujos frontend con GraphQL; trabajé en tarjetas de pago, historial de transacciones, cashback y contenido de Contentful."
+    "vegait_1": "Integré flujos frontend con GraphQL; trabajé en tarjetas de pago, historial de transacciones, cashback y contenido de Contentful.",
+    "bezimeni_3": "Mejoré la carga y el filtrado lentos de contenido de video con una arquitectura Next.js más clara y caché de React Query.",
+    "smsparking_2": "Implementé interfaces responsivas y componentes UI reutilizables con foco en usabilidad en web y móvil.",
+    "pricebee_2": "Construí componentes reutilizables y optimicé la aplicación y el flujo de datos."
   },
   "LocaleSwitcher": {
     "label": "Idioma",

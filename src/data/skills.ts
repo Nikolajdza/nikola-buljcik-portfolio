@@ -36,13 +36,16 @@ export const skillCategories: SkillCategory[] = [
     labelKey: "tools",
     skills: [
       "React Hook Form",
+      "Formik",
       "Zod",
       "GraphQL",
       "REST APIs",
+      "Design Systems",
+      "Micro Frontends",
+      "Performance Optimization",
       "Vitest",
       "Playwright",
       "Git",
-      "Design Systems",
     ],
   },
 ];

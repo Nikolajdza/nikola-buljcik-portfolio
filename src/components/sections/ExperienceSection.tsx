@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 /** Maps data id to number of bullet points */
 const DESCRIPTION_COUNTS: Record<string, number> = {
   candescent: 4,
-  smsparking: 2,
-  bezimeni: 3,
+  smsparking: 3,
+  bezimeni: 4,
   itengine: 2,
-  pricebee: 2,
+  pricebee: 3,
   vegait: 2,
 };
 

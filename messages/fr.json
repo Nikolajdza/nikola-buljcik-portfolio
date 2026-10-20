@@ -21,7 +21,7 @@
   "About": {
     "label": "À propos",
     "heading": "À propos de moi",
-    "bio": "Ingénieur Frontend spécialisé en React, Next.js et TypeScript pour des applications web orientées utilisateurs. Chez Candescent, j'ai construit des composants UI réutilisables et des bibliothèques partagées pour des produits bancaires numériques. Chez Bezimeni IT, j'ai dirigé l'architecture frontend d'une plateforme de streaming sportif britannique et mentoré deux ingénieurs frontend.",
+    "bio": "Ingénieur Frontend spécialisé en React, Next.js et TypeScript pour des applications web orientées utilisateurs en environnement enterprise et produit. Chez Candescent, j'ai construit des composants UI réutilisables et des bibliothèques partagées pour la banque digitale. Chez Bezimeni IT, j'ai pris des décisions techniques, organisé le frontend d'une plateforme de streaming sportif britannique, et mentoré deux ingénieurs frontend.",
     "locationLabel": "Localisation",
     "locationValue": "Belgrade, Serbie",
     "availabilityLabel": "Statut",
@@ -55,7 +55,10 @@
     "pricebee_0": "Développé des fonctionnalités frontend pour la gestion dynamique des prix et des visualisations de données interactives.",
     "pricebee_1": "Participé activement à la migration de JavaScript vers TypeScript, incluant le typage et les standards de qualité.",
     "vegait_0": "Développé une nouvelle application fintech et maintenu une plateforme existante avec des fonctionnalités, composants UI réutilisables et animations.",
-    "vegait_1": "Intégré des flux frontend avec GraphQL ; travaillé sur les cartes de paiement, l'historique, le cashback et le contenu Contentful."
+    "vegait_1": "Intégré des flux frontend avec GraphQL ; travaillé sur les cartes de paiement, l'historique, le cashback et le contenu Contentful.",
+    "bezimeni_3": "Amélioré le chargement et le filtrage lents du contenu vidéo grâce à une architecture Next.js plus claire et au cache React Query.",
+    "smsparking_2": "Implémenté des interfaces responsives et des composants UI réutilisables axés sur l'utilisabilité web et mobile.",
+    "pricebee_2": "Construit des composants réutilisables et optimisé l'application et le flux de données."
   },
   "LocaleSwitcher": {
     "label": "Langue",

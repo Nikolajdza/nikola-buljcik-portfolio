@@ -21,7 +21,7 @@
   "About": {
     "label": "Chi sono",
     "heading": "Chi sono",
-    "bio": "Ingegnere Frontend specializzato in React, Next.js e TypeScript per applicazioni web orientate agli utenti. In Candescent ho costruito componenti UI riutilizzabili e librerie condivise per prodotti bancari digitali. In Bezimeni IT ho guidato l'architettura frontend di una piattaforma di streaming sportivo britannica e mentorizzato due ingegneri frontend.",
+    "bio": "Ingegnere Frontend specializzato in React, Next.js e TypeScript per applicazioni web orientate agli utenti in contesti enterprise e product. In Candescent ho costruito componenti UI riutilizzabili e librerie condivise per prodotti bancari digitali. In Bezimeni IT ho preso decisioni tecniche, organizzato il frontend di una piattaforma di streaming sportivo britannica e mentorizzato due ingegneri frontend.",
     "locationLabel": "Posizione",
     "locationValue": "Belgrado, Serbia",
     "availabilityLabel": "Stato",
@@ -55,7 +55,10 @@
     "pricebee_0": "Sviluppato funzionalità frontend per la gestione dinamica dei prezzi e visualizzazioni interattive dei dati.",
     "pricebee_1": "Partecipato attivamente alla migrazione da JavaScript a TypeScript, inclusa la tipizzazione e gli standard di qualità.",
     "vegait_0": "Sviluppato una nuova applicazione fintech e mantenuto una piattaforma esistente con funzionalità, componenti UI riutilizzabili e animazioni.",
-    "vegait_1": "Integrato flussi frontend con GraphQL; lavorato su carte di pagamento, cronologia transazioni, cashback e contenuto Contentful."
+    "vegait_1": "Integrato flussi frontend con GraphQL; lavorato su carte di pagamento, cronologia transazioni, cashback e contenuto Contentful.",
+    "bezimeni_3": "Migliorato il caricamento e il filtraggio lenti dei contenuti video con un'architettura Next.js più pulita e la cache React Query.",
+    "smsparking_2": "Implementato interfacce responsive e componenti UI riutilizzabili con focus sull'usabilità web e mobile.",
+    "pricebee_2": "Costruito componenti riutilizzabili e ottimizzato l'applicazione e il flusso dati."
   },
   "LocaleSwitcher": {
     "label": "Lingua",

@@ -21,7 +21,7 @@
   "About": {
     "label": "Über mich",
     "heading": "Über mich",
-    "bio": "Frontend-Ingenieur spezialisiert auf React, Next.js und TypeScript für kundenorientierte Webanwendungen. Bei Candescent entwickelte ich wiederverwendbare UI-Komponenten und Bibliotheken für digitale Bankprodukte. Bei Bezimeni IT leitete ich die Frontend-Architektur einer britischen Sport-Streaming-Plattform und mentorierte zwei Frontend-Ingenieure.",
+    "bio": "Frontend-Ingenieur spezialisiert auf React, Next.js und TypeScript für kundenorientierte Webanwendungen in Enterprise- und Product-Workflows. Bei Candescent entwickelte ich wiederverwendbare UI-Komponenten und Bibliotheken für digitale Bankprodukte. Bei Bezimeni IT traf ich technische Entscheidungen, organisierte das Frontend einer britischen Sport-Streaming-Plattform und mentorierte zwei Frontend-Ingenieure.",
     "locationLabel": "Standort",
     "locationValue": "Belgrad, Serbien",
     "availabilityLabel": "Status",
@@ -55,7 +55,10 @@
     "pricebee_0": "Frontend-Funktionalität für dynamisches Preismanagement und interaktive Datenvisualisierungen entwickelt.",
     "pricebee_1": "Aktiv an der JavaScript-zu-TypeScript-Migration mitgewirkt, einschließlich Typisierung und Code-Qualitätsstandards.",
     "vegait_0": "Neue Fintech-Anwendung entwickelt und bestehende Plattform gepflegt, mit Features, wiederverwendbaren UI-Komponenten und Animationen.",
-    "vegait_1": "Frontend-Flows mit GraphQL integriert; an Zahlungskarten, Transaktionshistorie, Cashback und Contentful-Inhalten gearbeitet."
+    "vegait_1": "Frontend-Flows mit GraphQL integriert; an Zahlungskarten, Transaktionshistorie, Cashback und Contentful-Inhalten gearbeitet.",
+    "bezimeni_3": "Langsames Laden und Filtern von Videoinhalten mit einer klareren Next.js-Architektur und React Query Caching verbessert.",
+    "smsparking_2": "Responsive Interfaces und wiederverwendbare UI-Komponenten mit Fokus auf Usability für Web und Mobile implementiert.",
+    "pricebee_2": "Wiederverwendbare Komponenten gebaut und Anwendung sowie Datenfluss optimiert."
   },
   "LocaleSwitcher": {
     "label": "Sprache",

@@ -21,7 +21,7 @@
   "About": {
     "label": "O meni",
     "heading": "O meni",
-    "bio": "Frontend inženjer specijalizovan za React, Next.js i TypeScript za web aplikacije okrenute korisnicima. U Candescentu sam gradio višekratne UI komponente i zajedničke biblioteke za proizvode digitalnog bankarstva. U Bezimeni IT-u sam vodio frontend arhitekturu sportske streaming platforme i mentoririsao dva frontend inženjera.",
+    "bio": "Frontend inženjer specijalizovan za React, Next.js i TypeScript za web aplikacije okrenute korisnicima u enterprise i product okruženju. U Candescentu sam gradio višekratne UI komponente i zajedničke biblioteke za digitalno bankarstvo. U Bezimeni IT-u sam donosio tehničke odluke i organizovao frontend sportske streaming platforme, te vodio i mentoririsao dva frontend inženjera.",
     "locationLabel": "Lokacija",
     "locationValue": "Beograd, Srbija",
     "availabilityLabel": "Status",
@@ -55,7 +55,10 @@
     "pricebee_0": "Razvijao frontend funkcionalnosti za dinamičko formiranje cena i interaktivne vizualizacije podataka za platformu za upravljanje cenama.",
     "pricebee_1": "Aktivno učestvovao u migraciji sa JavaScript-a na TypeScript, uključujući tipizaciju i standarde kvaliteta koda.",
     "vegait_0": "Razvio novu fintech aplikaciju i održavao postojeću platformu, isporučujući funkcionalnosti, višekratne UI komponente i animacije.",
-    "vegait_1": "Integrisao frontend tokove sa GraphQL-om; radio na platnim karticama, istoriji transakcija, cashback-u i Contentful sadržaju."
+    "vegait_1": "Integrisao frontend tokove sa GraphQL-om; radio na platnim karticama, istoriji transakcija, cashback-u i Contentful sadržaju.",
+    "bezimeni_3": "Rešio sporije učitavanje i filtriranje video sadržaja čistijom Next.js arhitekturom i React Query keširanjem.",
+    "smsparking_2": "Implementirao responzivne interfejse i višekratne UI komponente sa fokusom na upotrebljivost na web-u i mobilnim uređajima.",
+    "pricebee_2": "Izgradio višekratne komponente i optimizovao aplikaciju i tok podataka."
   },
   "LocaleSwitcher": {
     "label": "Jezik",
