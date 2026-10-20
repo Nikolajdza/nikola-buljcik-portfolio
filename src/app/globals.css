@@ -18,16 +18,17 @@
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --muted: #a1a1aa;
-  --muted-bg: #18181b;
-  --border: #27272a;
-  --card: #18181b;
-  --card-border: #3f3f46;
+  /* Deep ink — Job Radar / product UI feel */
+  --background: #05060b;
+  --foreground: #f4f4f5;
+  --muted: #9ca3af;
+  --muted-bg: #0e1018;
+  --border: #1c2030;
+  --card: #0c0e16;
+  --card-border: #252a3a;
   --accent: #818cf8;
-  --accent-fg: #09090b;
-  --header-bg: rgba(9, 9, 11, 0.8);
+  --accent-fg: #05060b;
+  --header-bg: rgba(5, 6, 11, 0.78);
 }
 
 /* ─── Register tokens as Tailwind utilities ───────────────────── */
@@ -84,6 +85,198 @@ body {
 .dot-grid {
   background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
   background-size: 28px 28px;
+}
+
+/* ─── Site atmosphere (Job Radar–style: corner rings + strong washes) ── */
+.atmosphere-base {
+  background-color: #eef3f8;
+  background-image:
+    radial-gradient(
+      ellipse 52rem 36rem at -4% -10%,
+      rgba(99, 102, 241, 0.28),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 44rem 32rem at 104% -4%,
+      rgba(56, 189, 248, 0.26),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 40rem 28rem at 78% 108%,
+      rgba(129, 140, 248, 0.14),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 26rem 20rem at 12% 92%,
+      rgba(34, 211, 238, 0.12),
+      transparent 70%
+    );
+}
+
+.dark .atmosphere-base {
+  background-color: #05060b;
+  background-image:
+    radial-gradient(
+      ellipse 56rem 40rem at -6% -12%,
+      rgba(99, 102, 241, 0.62),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50rem 38rem at 106% -4%,
+      rgba(34, 211, 238, 0.55),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 42rem 30rem at 80% 105%,
+      rgba(56, 189, 248, 0.28),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 30rem 24rem at 14% 90%,
+      rgba(129, 140, 248, 0.22),
+      transparent 70%
+    );
+}
+
+/* Sharp concentric ring strokes — same trick as AI Job Radar */
+.atmosphere-rings {
+  background-image:
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 3.5rem,
+      rgba(99, 102, 241, 0.28) 3.55rem,
+      transparent 3.8rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 7rem,
+      rgba(99, 102, 241, 0.18) 7.05rem,
+      transparent 7.3rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 10.5rem,
+      rgba(99, 102, 241, 0.12) 10.55rem,
+      transparent 10.8rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 14.5rem,
+      rgba(99, 102, 241, 0.07) 14.55rem,
+      transparent 14.8rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 4rem,
+      rgba(14, 165, 233, 0.32) 4.05rem,
+      transparent 4.3rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 8rem,
+      rgba(14, 165, 233, 0.2) 8.05rem,
+      transparent 8.3rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 12.5rem,
+      rgba(14, 165, 233, 0.12) 12.55rem,
+      transparent 12.8rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 17rem,
+      rgba(56, 189, 248, 0.07) 17.05rem,
+      transparent 17.3rem
+    );
+}
+
+.dark .atmosphere-rings {
+  background-image:
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 3.5rem,
+      rgba(199, 210, 254, 0.42) 3.55rem,
+      transparent 3.85rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 7rem,
+      rgba(165, 180, 252, 0.26) 7.05rem,
+      transparent 7.35rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 10.5rem,
+      rgba(129, 140, 248, 0.16) 10.55rem,
+      transparent 10.85rem
+    ),
+    radial-gradient(
+      circle at 8% 4%,
+      transparent 0 14.5rem,
+      rgba(99, 102, 241, 0.09) 14.55rem,
+      transparent 14.85rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 4rem,
+      rgba(165, 243, 252, 0.48) 4.05rem,
+      transparent 4.35rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 8rem,
+      rgba(103, 232, 249, 0.3) 8.05rem,
+      transparent 8.35rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 12.5rem,
+      rgba(56, 189, 248, 0.18) 12.55rem,
+      transparent 12.85rem
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      transparent 0 17.5rem,
+      rgba(34, 211, 238, 0.1) 17.55rem,
+      transparent 17.85rem
+    );
+}
+
+.atmosphere-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 42%,
+    rgba(15, 23, 42, 0.06) 100%
+  );
+}
+
+.dark .atmosphere-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.atmosphere-grid {
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 12%, transparent 12%, #000 78%);
+}
+
+.dark .atmosphere-grid {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+}
+
+.atmosphere-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
 }
 
 /* ─── Card glow on hover ──────────────────────────────────────── */
@@ -165,6 +358,87 @@ body {
   animation-delay: 4s;
 }
 
+/* Route fade-in (PageTransition remounts on pathname) */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.3s ease-out;
+}
+
+/* Hero code card — gradient border + scanline */
+.hero-code-shell {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(129, 140, 248, 0.7),
+    rgba(56, 189, 248, 0.35),
+    rgba(167, 139, 250, 0.45),
+    rgba(129, 140, 248, 0.25)
+  );
+  box-shadow:
+    0 0 0 1px rgba(129, 140, 248, 0.12),
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(129, 140, 248, 0.12);
+}
+
+.hero-code-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(1rem - 1px);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.hero-code-scanline {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(129, 140, 248, 0.03) 2px,
+    rgba(129, 140, 248, 0.03) 4px
+  );
+  mix-blend-mode: soft-light;
+}
+
+.hero-code-scan-beam {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 28%;
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.08), transparent);
+  animation: scan-beam 5.5s ease-in-out infinite;
+}
+
+@keyframes scan-beam {
+  0% {
+    top: -30%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
 /* ─── Focus ring ──────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -173,7 +447,9 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-blob,
-  .cursor-blink {
+  .cursor-blink,
+  .hero-code-scan-beam,
+  .page-enter {
     animation: none !important;
   }
 

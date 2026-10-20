@@ -25,7 +25,6 @@ export function SectionHeader({
         className,
       )}
     >
-      {/* Large decorative index number — purely visual */}
       <span
         className={cn(
           "pointer-events-none absolute -top-4 leading-none font-black select-none",
@@ -38,26 +37,30 @@ export function SectionHeader({
       </span>
 
       <div className="relative">
-        {/* Eyebrow label */}
-        <p className="text-accent mb-3 font-mono text-xs tracking-[0.25em] uppercase">
+        <p
+          className={cn(
+            "text-accent mb-3 inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.25em] uppercase",
+            centered && "justify-center",
+          )}
+        >
+          <span
+            className="bg-accent shadow-accent/60 relative inline-flex h-1.5 w-1.5 rounded-full shadow-[0_0_10px_currentColor]"
+            aria-hidden="true"
+          >
+            <span className="bg-accent absolute inset-0 animate-ping rounded-full opacity-40" />
+          </span>
           <span className="opacity-50">{index}</span>
-          <span className="mx-2 opacity-30">—</span>
+          <span className="opacity-30">—</span>
           {label}
         </p>
 
-        {/* Heading with gradient accent on first word */}
-        <h2
-          className={cn(
-            "text-foreground text-3xl font-black tracking-tight md:text-4xl lg:text-5xl",
-          )}
-        >
+        <h2 className="text-foreground text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
           {heading}
         </h2>
 
-        {/* Underline accent */}
         <div
           className={cn(
-            "from-accent mt-4 h-px w-16 bg-gradient-to-r to-violet-500/50",
+            "from-accent mt-4 h-px w-16 bg-gradient-to-r via-cyan-400/60 to-transparent",
             centered && "mx-auto",
           )}
         />

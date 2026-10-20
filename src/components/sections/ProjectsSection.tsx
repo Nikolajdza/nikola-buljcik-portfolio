@@ -109,8 +109,8 @@ function FeaturedCard({
   return (
     <div
       className={cn(
-        "group border-border bg-card flex flex-col rounded-2xl border p-6",
-        "hover:border-accent/30 hover:shadow-accent/5 transition-all duration-200 hover:shadow-lg",
+        "group border-border/80 bg-card/70 flex flex-col rounded-2xl border p-6 backdrop-blur-md",
+        "hover:border-accent/30 hover:shadow-accent/10 transition-all duration-200 hover:shadow-[0_0_40px_rgba(129,140,248,0.08)]",
       )}
     >
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -173,12 +173,12 @@ function RepoCard({
   return (
     <div
       className={cn(
-        "group border-border bg-card flex flex-col overflow-hidden rounded-2xl border",
-        "hover:border-accent/40 hover:shadow-accent/5 transition-all duration-200 hover:shadow-lg",
+        "group border-border/80 bg-card/70 flex flex-col overflow-hidden rounded-2xl border backdrop-blur-md",
+        "hover:border-accent/40 hover:shadow-accent/10 transition-all duration-200 hover:shadow-[0_0_40px_rgba(129,140,248,0.08)]",
       )}
     >
       {repo.image && (
-        <div className="border-border relative aspect-[16/10] w-full overflow-hidden border-b">
+        <div className="border-border/80 relative aspect-[16/10] w-full overflow-hidden border-b">
           <Image
             src={repo.image}
             alt={repo.name}

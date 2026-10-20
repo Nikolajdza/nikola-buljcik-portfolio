@@ -102,19 +102,18 @@ function ExperienceCard({
       {/* Timeline dot */}
       <span
         className={cn(
-          "absolute top-5 -left-[37px] hidden h-3 w-3 rounded-full border-2 md:block",
+          "absolute top-5 -left-[37px] hidden h-3 w-3 rounded-full border-2 transition-all duration-200 md:block",
           item.current
-            ? "border-accent bg-accent shadow-[0_0_8px_rgba(129,140,248,0.6)]"
-            : "border-border bg-card group-hover:border-accent/60",
+            ? "border-accent bg-accent shadow-[0_0_14px_rgba(129,140,248,0.85)]"
+            : "border-border bg-card group-hover:border-accent group-hover:bg-accent/30 group-hover:shadow-[0_0_12px_rgba(129,140,248,0.45)]",
         )}
         aria-hidden="true"
       />
 
-      {/* Card */}
       <div
         className={cn(
-          "border-border bg-card rounded-2xl border p-6 transition-all duration-200",
-          "hover:border-accent/30 hover:shadow-accent/5 hover:shadow-lg",
+          "border-border/80 bg-card/70 rounded-2xl border p-6 backdrop-blur-md transition-all duration-200",
+          "hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(129,140,248,0.1)]",
         )}
       >
         {/* Header */}

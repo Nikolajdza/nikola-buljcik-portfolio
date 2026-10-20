@@ -8,6 +8,9 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { SiteAtmosphere } from "@/components/SiteAtmosphere";
+import { CursorGlow } from "@/components/CursorGlow";
+import { PageTransition } from "@/components/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,41 +85,13 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="bg-background text-foreground min-h-screen antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
-            {/* ── Persistent page background ──────────────────────────
-                fixed + -z-10 so it stays behind all content while
-                the user scrolls. Orbs animate continuously. */}
-            <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
-              {/* Dot grid */}
-              <div className="dot-grid absolute inset-0 opacity-50" />
-
-              {/* Indigo orb — top right */}
-              <div
-                className="animate-blob absolute -top-60 right-[8%] h-[700px] w-[700px] rounded-full opacity-[0.12] blur-3xl"
-                style={{
-                  background:
-                    "radial-gradient(circle, #818cf8 0%, #6366f1 50%, transparent 70%)",
-                }}
-              />
-              {/* Cyan orb — bottom left */}
-              <div
-                className="animate-blob animation-delay-2000 absolute bottom-[5%] left-[3%] h-[600px] w-[600px] rounded-full opacity-[0.08] blur-3xl"
-                style={{
-                  background:
-                    "radial-gradient(circle, #22d3ee 0%, #0891b2 50%, transparent 70%)",
-                }}
-              />
-              {/* Violet orb — center */}
-              <div
-                className="animate-blob animation-delay-4000 absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-3xl"
-                style={{
-                  background:
-                    "radial-gradient(circle, #a78bfa 0%, #7c3aed 50%, transparent 70%)",
-                }}
-              />
-            </div>
+            <SiteAtmosphere />
+            <CursorGlow />
 
             <Header />
-            <main className="pt-16">{children}</main>
+            <main className="pt-16">
+              <PageTransition>{children}</PageTransition>
+            </main>
             <Footer />
             <ScrollToTop />
           </ThemeProvider>

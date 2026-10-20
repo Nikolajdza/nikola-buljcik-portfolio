@@ -43,14 +43,22 @@ export function Header() {
       <header
         className={cn(
           "fixed top-0 right-0 left-0 z-40 h-16 transition-all duration-300",
-          "border-b",
+          "border-b backdrop-blur-xl",
           scrolled
-            ? "border-border/60 backdrop-blur-xl"
-            : "border-transparent backdrop-blur-md",
+            ? "border-border/50 bg-[var(--header-bg)]"
+            : "border-transparent bg-[var(--header-bg)]/40",
         )}
-        style={{ backgroundColor: scrolled ? "var(--header-bg)" : "transparent" }}
       >
-        <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
+        {/* Accent signal line under header */}
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-x-0 bottom-0 h-px transition-opacity duration-300",
+            "via-accent/50 bg-gradient-to-r from-transparent to-transparent",
+            scrolled ? "opacity-100" : "opacity-40",
+          )}
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto flex h-full max-w-6xl items-center justify-between px-6">
           {/* Logo */}
           <Link
             href="/"

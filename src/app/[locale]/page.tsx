@@ -23,14 +23,11 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative flex min-h-[calc(100vh-4rem)] items-center">
-        {/* Content: two-column on large screens */}
+      <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden">
         <Container className="relative z-10 py-24">
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[3fr_2fr]">
-            {/* ── Left: text content ─────────────────────────────── */}
             <div>
-              {/* Available badge */}
-              <div className="border-accent/30 bg-accent/10 mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-1.5">
+              <div className="border-accent/40 bg-accent/10 mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 shadow-[0_0_24px_rgba(129,140,248,0.15)] backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
@@ -38,16 +35,18 @@ export default async function HomePage({ params }: Props) {
                 <span className="text-accent text-xs font-medium">{t("badge")}</span>
               </div>
 
-              {/* Greeting */}
               <p className="text-muted mb-2 text-base font-medium md:text-lg">
                 {t("greeting")}
               </p>
 
-              {/* Name */}
               <h1 className="mb-6 text-5xl leading-none font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-                <span className="gradient-text">Nikola</span>
+                <span className="gradient-text drop-shadow-[0_0_40px_rgba(129,140,248,0.25)]">
+                  Nikola
+                </span>
                 <br />
-                <span className="gradient-text">Buljčik</span>
+                <span className="gradient-text drop-shadow-[0_0_40px_rgba(34,211,238,0.2)]">
+                  Buljčik
+                </span>
               </h1>
 
               {/* Role */}
