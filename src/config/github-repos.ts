@@ -2,6 +2,7 @@ import type { GitHubRepo } from "@/lib/github";
 
 /** Repo names shown first in Open Source (order preserved) */
 export const PINNED_REPO_NAMES = [
+  "ai-research-newsletter",
   "ai-job-radar",
   "pulse-terminal",
   "booking",
@@ -18,6 +19,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
   company: ["Next.js", "TypeScript"],
+  "ai-research-newsletter": ["Next.js", "TypeScript"],
   "ai-job-radar": ["Next.js", "TypeScript"],
   "pulse-terminal": ["React", "TypeScript"],
   "API-Playground": ["React", "TypeScript"],
@@ -33,6 +35,8 @@ export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
   company:
     "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
+  "ai-research-newsletter":
+    "InsightLoop — RSS → structured AI analysis → Postgres → daily Telegram digest, with a Next.js dashboard and Vercel Cron.",
   "ai-job-radar":
     "AI job-search dashboard — Remotive sync, profile/CV matching, application tracking, and optional OpenAI analysis.",
   "pulse-terminal":
@@ -58,6 +62,20 @@ export function getRepoDescription(
 
 /** Fallback when API list is stale or repo is very new */
 export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepo> = {
+  "ai-research-newsletter": {
+    id: 9_005,
+    name: "ai-research-newsletter",
+    description:
+      "InsightLoop — RSS → structured AI analysis → Postgres → daily Telegram digest, with a Next.js dashboard and Vercel Cron.",
+    html_url: "https://github.com/Nikolajdza/ai-research-newsletter",
+    language: "TypeScript",
+    stack: ["Next.js", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "typescript", "ai", "telegram", "rss"],
+  },
   "ai-job-radar": {
     id: 9_004,
     name: "ai-job-radar",

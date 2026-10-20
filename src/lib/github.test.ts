@@ -51,13 +51,14 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(7); // 2 from API + 5 pinned
+    expect(result).toHaveLength(8); // 2 from API + 6 pinned
     expect(result.every((r) => !r.fork)).toBe(true);
-    expect(result[0].name).toBe("ai-job-radar");
-    expect(result[1].name).toBe("pulse-terminal");
-    expect(result[2].name).toBe("booking");
-    expect(result[3].name).toBe("booking-api-rest");
-    expect(result[4].name).toBe("company");
+    expect(result[0].name).toBe("ai-research-newsletter");
+    expect(result[1].name).toBe("ai-job-radar");
+    expect(result[2].name).toBe("pulse-terminal");
+    expect(result[3].name).toBe("booking");
+    expect(result[4].name).toBe("booking-api-rest");
+    expect(result[5].name).toBe("company");
   });
 
   it("should sort repos by stars descending", async () => {
@@ -87,12 +88,13 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result[0].name).toBe("ai-job-radar");
-    expect(result[1].name).toBe("pulse-terminal");
-    expect(result[2].name).toBe("booking");
-    expect(result[3].name).toBe("booking-api-rest");
-    expect(result[4].name).toBe("company");
-    expect(result[5].name).toBe("high-stars");
+    expect(result[0].name).toBe("ai-research-newsletter");
+    expect(result[1].name).toBe("ai-job-radar");
+    expect(result[2].name).toBe("pulse-terminal");
+    expect(result[3].name).toBe("booking");
+    expect(result[4].name).toBe("booking-api-rest");
+    expect(result[5].name).toBe("company");
+    expect(result[6].name).toBe("high-stars");
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -109,7 +111,7 @@ describe("getGitHubRepos", () => {
 });
 
 describe("applyPinnedRepos", () => {
-  it("puts ai-job-radar first, then the other pinned repos", () => {
+  it("puts ai-research-newsletter first, then the other pinned repos", () => {
     const repos: GitHubRepo[] = [
       {
         id: 1,
@@ -127,19 +129,24 @@ describe("applyPinnedRepos", () => {
     ];
 
     const result = applyPinnedRepos(repos);
-    expect(result[0].name).toBe("ai-job-radar");
-    expect(result[0].html_url).toBe("https://github.com/Nikolajdza/ai-job-radar");
+    expect(result[0].name).toBe("ai-research-newsletter");
+    expect(result[0].html_url).toBe(
+      "https://github.com/Nikolajdza/ai-research-newsletter",
+    );
     expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[1].name).toBe("pulse-terminal");
-    expect(result[1].html_url).toBe("https://github.com/Nikolajdza/pulse-terminal");
-    expect(result[1].stack).toEqual(["React", "TypeScript"]);
-    expect(result[2].name).toBe("booking");
-    expect(result[2].html_url).toBe("https://github.com/Nikolajdza/booking");
-    expect(result[2].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[3].name).toBe("booking-api-rest");
-    expect(result[3].stack).toEqual(["NestJS", "TypeScript"]);
-    expect(result[4].name).toBe("company");
-    expect(result[4].html_url).toBe("https://github.com/Nikolajdza/company");
-    expect(result[4].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[1].name).toBe("ai-job-radar");
+    expect(result[1].html_url).toBe("https://github.com/Nikolajdza/ai-job-radar");
+    expect(result[1].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[2].name).toBe("pulse-terminal");
+    expect(result[2].html_url).toBe("https://github.com/Nikolajdza/pulse-terminal");
+    expect(result[2].stack).toEqual(["React", "TypeScript"]);
+    expect(result[3].name).toBe("booking");
+    expect(result[3].html_url).toBe("https://github.com/Nikolajdza/booking");
+    expect(result[3].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[4].name).toBe("booking-api-rest");
+    expect(result[4].stack).toEqual(["NestJS", "TypeScript"]);
+    expect(result[5].name).toBe("company");
+    expect(result[5].html_url).toBe("https://github.com/Nikolajdza/company");
+    expect(result[5].stack).toEqual(["Next.js", "TypeScript"]);
   });
 });
