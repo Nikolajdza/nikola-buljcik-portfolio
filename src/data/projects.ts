@@ -5,6 +5,8 @@ export interface FeaturedProject {
   year: string;
   /** i18n key suffix in messages/Projects namespace */
   descriptionKey: string;
+  /** Optional impact line key: Projects.{id}Impact */
+  impactKey?: string;
   technologies: string[];
   /** Tailwind gradient classes for the card accent */
   gradient: string;
@@ -17,6 +19,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: "Digital Banking Platform",
     year: "2024 — 2026",
     descriptionKey: "banking",
+    impactKey: "bankingImpact",
     technologies: ["React", "Redux Toolkit", "Material UI", "React Native", "REST APIs"],
     gradient: "from-violet-500/20 to-indigo-500/20",
   },
@@ -26,6 +29,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: "Parking Payment Platform",
     year: "2025",
     descriptionKey: "parking",
+    impactKey: "parkingImpact",
     technologies: ["React", "Flutter", "TypeScript"],
     gradient: "from-blue-500/20 to-sky-500/20",
   },
@@ -35,6 +39,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: "Sports Streaming Platform",
     year: "2023 — 2024",
     descriptionKey: "streaming",
+    impactKey: "streamingImpact",
     technologies: ["Next.js", "React", "React Query", "TypeScript", "Tailwind CSS"],
     gradient: "from-rose-500/20 to-pink-500/20",
   },

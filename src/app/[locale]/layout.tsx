@@ -39,6 +39,20 @@ export async function generateMetadata({
       description: t("description"),
       type: "website",
       locale,
+      images: [
+        {
+          url: "/images/nikola.jpg",
+          width: 1200,
+          height: 1200,
+          alt: "Nikola Buljčik",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/nikola.jpg"],
     },
   };
 }

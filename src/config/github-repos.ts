@@ -9,9 +9,7 @@ export const PINNED_REPO_NAMES = [
   "ai-job-radar",
   "pulse-terminal",
   "booking",
-  "booking-api-rest",
   "company",
-  "green-api-max-chat",
   "uber",
 ] as const;
 
@@ -41,6 +39,20 @@ export const REPO_DEMO_URLS: Record<string, string> = {
   "green-api-max-chat": "https://green-api-max-chat-pearl.vercel.app",
   uber: "https://uber-five-sigma.vercel.app",
 };
+
+/** Optional card preview images under /public */
+export const REPO_IMAGES: Record<string, string> = {
+  "ai-research-newsletter": "/images/projects/ai-research-newsletter.png",
+  "ai-job-radar": "/images/projects/ai-job-radar.png",
+  "pulse-terminal": "/images/projects/pulse-terminal.png",
+  booking: "/images/projects/booking.png",
+  company: "/images/projects/company.png",
+  uber: "/images/projects/uber.png",
+};
+
+export function getRepoImage(repoName: string): string | null {
+  return REPO_IMAGES[repoName] ?? null;
+}
 
 /** Optional copy when GitHub repo has no description */
 export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {

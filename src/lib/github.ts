@@ -1,6 +1,7 @@
 import {
   getRepoDemoUrl,
   getRepoDescription,
+  getRepoImage,
   getRepoStackTags,
   PINNED_REPO_FALLBACKS,
   PINNED_REPO_NAMES,
@@ -15,6 +16,8 @@ export interface GitHubRepo {
   homepage: string | null;
   /** Resolved demo URL for the UI (config wins over homepage) */
   demoUrl: string | null;
+  /** Optional preview screenshot path */
+  image: string | null;
   language: string | null;
   /** Framework + language chips for the UI */
   stack: string[];
@@ -25,9 +28,10 @@ export interface GitHubRepo {
   topics: string[];
 }
 
-export type GitHubRepoSeed = Omit<GitHubRepo, "stack" | "demoUrl"> & {
+export type GitHubRepoSeed = Omit<GitHubRepo, "stack" | "demoUrl" | "image"> & {
   stack?: string[];
   demoUrl?: string | null;
+  image?: string | null;
 };
 
 function withStack(repo: GitHubRepoSeed): GitHubRepo {
@@ -41,6 +45,7 @@ function withStack(repo: GitHubRepoSeed): GitHubRepo {
     description,
     homepage,
     demoUrl: getRepoDemoUrl({ name: repo.name, homepage }),
+    image: getRepoImage(repo.name),
     stack: repo.stack ?? getRepoStackTags(repo),
   };
 }

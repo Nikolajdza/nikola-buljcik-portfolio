@@ -121,6 +121,7 @@ describe("applyPinnedRepos", () => {
         html_url: "https://github.com/Nikolajdza/game-hub",
         homepage: null,
         demoUrl: null,
+        image: null,
         language: "TypeScript",
         stack: ["React", "TypeScript"],
         stargazers_count: 3,
@@ -135,11 +136,12 @@ describe("applyPinnedRepos", () => {
     expect(result).toHaveLength(PINNED_REPO_NAMES.length);
     expect(result[0].name).toBe("ai-research-newsletter");
     expect(result[0].demoUrl).toBe("https://ai-research-newsletter.vercel.app");
+    expect(result[0].image).toBe("/images/projects/ai-research-newsletter.png");
     expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[4].name).toBe("booking-api-rest");
-    expect(result[4].demoUrl).toBeNull();
-    expect(result[6].name).toBe("green-api-max-chat");
-    expect(result[7].name).toBe("uber");
+    expect(result[4].name).toBe("company");
+    expect(result[5].name).toBe("uber");
+    expect(result.some((r) => r.name === "booking-api-rest")).toBe(false);
+    expect(result.some((r) => r.name === "green-api-max-chat")).toBe(false);
     expect(result.some((r) => r.name === "game-hub")).toBe(false);
   });
 });

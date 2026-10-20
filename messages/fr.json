@@ -1,7 +1,7 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Ingénieur Frontend Senior spécialisé en React, Next.js et TypeScript."
+    "description": "Ingénieur Frontend Senior — React/Next.js, pipelines AI, UIs temps réel et applications web orientées utilisateurs."
   },
   "Nav": {
     "about": "À propos",
@@ -13,7 +13,7 @@
     "badge": "Disponible pour de nouvelles opportunités",
     "greeting": "Bonjour, je suis",
     "role": "Ingénieur Frontend Senior",
-    "stack": "React · Next.js · TypeScript · Node.js",
+    "stack": "React · Next.js · Produits AI · UIs temps réel",
     "cta_projects": "Voir les projets",
     "cta_contact": "Me contacter",
     "cta_cv": "Télécharger CV"
@@ -83,7 +83,11 @@
     "parking": "Plateforme web et mobile de paiement de stationnement pour le marché néerlandais — recherche de zones, services de localisation et paiement digital en React et Flutter.",
     "production": "Développement d'une application de suivi des processus de production et d'approvisionnement.",
     "liveDemo": "Démo live",
-    "viewCode": "Code"
+    "viewCode": "Code",
+    "caseStudy": "Étude de cas",
+    "bankingImpact": "Impact · Banques et coopératives aux USA et en Europe",
+    "parkingImpact": "Impact · Paiement parking web + mobile pour le marché néerlandais",
+    "streamingImpact": "Impact · Lead frontend · mentorat de 2 ingénieurs"
   },
   "Contact": {
     "label": "Contact",
@@ -112,5 +116,35 @@
     "availableValue": "Ouvert aux opportunités",
     "responseLabel": "Délai de réponse",
     "responseValue": "Sous 24 heures"
+  },
+  "CaseStudy": {
+    "label": "Étude de cas",
+    "back": "Retour aux projets",
+    "liveDemo": "Démo live",
+    "viewCode": "Voir le code",
+    "problem": "Problème",
+    "approach": "Approche",
+    "outcome": "Résultat",
+    "stack": "Stack"
+  },
+  "CaseStudies": {
+    "newsletter": {
+      "tagline": "RSS in → structured AI analysis → Postgres → a personal daily Telegram digest.",
+      "highlight_0": "Analyze once with Zod-validated LLM output — never re-score the same article.",
+      "highlight_1": "Multi-reader personalization on shared analyzed content.",
+      "highlight_2": "Production path: Vercel Cron + Supabase on a free-tier stack.",
+      "problem": "Most “AI newsletter” demos stop at a chatbot UI. The hard part is a reliable ingest → analyze → deliver pipeline that stays cheap, dedupes sources, and personalizes digests without re-running models for every reader.",
+      "approach": "InsightLoop collects RSS feeds, canonicalizes URLs, runs a structured LLM pass (Groq primary with optional failover), stores results in Postgres via Drizzle, and sends card-style Telegram digests. A Next.js dashboard covers Discover, preferences, pipeline health, and admin workflow controls.",
+      "outcome": "A portfolio-grade product you can click through live: public Discover, topic onboarding, Telegram connect, and a daily production cron — focused on orchestration, not just prompts."
+    },
+    "pulse": {
+      "tagline": "Real-time Binance market terminal built for event pressure, not just “connect a WebSocket”.",
+      "highlight_0": "rAF-batched stream updates to keep the UI responsive under load.",
+      "highlight_1": "Local order book synced to Binance snapshot + diff sequence rules.",
+      "highlight_2": "Performance Lab injects 1k–10k synthetic events/sec to prove the architecture.",
+      "problem": "Many crypto demos look fine with quiet markets and fall apart when trade and depth streams spike. Re-rendering per message and naive book updates create jank and correctness bugs.",
+      "approach": "Pulse Terminal uses a native WebSocket manager with reconnect/backoff, coalesces bursts on requestAnimationFrame into Zustand, virtualizes the trade feed, and keeps the local order book aligned with exchange sequence rules. Charts and depth UI stay interactive while metrics expose events/sec and UI Hz.",
+      "outcome": "A dense terminal experience that demonstrates production frontend craft: streaming reliability, batching, virtualization, and measurable performance under synthetic load."
+    }
   }
 }

@@ -171,6 +171,17 @@ body {
   outline-offset: 2px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .cursor-blink {
+    animation: none !important;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ─── Scrollbar (webkit) ──────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;

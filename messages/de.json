@@ -1,7 +1,7 @@
 {
   "LocaleLayout": {
     "title": "Nikola Buljčik — Portfolio",
-    "description": "Senior Frontend-Ingenieur spezialisiert auf React, Next.js und TypeScript."
+    "description": "Senior Frontend-Ingenieur für React/Next.js — AI-Pipelines, Echtzeit-UIs und kundenorientierte Web-Apps."
   },
   "Nav": {
     "about": "Über mich",
@@ -13,7 +13,7 @@
     "badge": "Offen für neue Möglichkeiten",
     "greeting": "Hallo, ich bin",
     "role": "Senior Frontend-Ingenieur",
-    "stack": "React · Next.js · TypeScript · Node.js",
+    "stack": "React · Next.js · AI-Produkte · Echtzeit-UIs",
     "cta_projects": "Projekte ansehen",
     "cta_contact": "Kontakt aufnehmen",
     "cta_cv": "Lebenslauf"
@@ -83,7 +83,11 @@
     "parking": "Web- und mobile Parkzahlungsplattform für den niederländischen Markt gebaut — Zonensuche, Standortdienste und digitales Bezahlen in React und Flutter.",
     "production": "Anwendung zur Verfolgung von Produktions- und Beschaffungsprozessen entwickelt.",
     "liveDemo": "Live-Demo",
-    "viewCode": "Code"
+    "viewCode": "Code",
+    "caseStudy": "Case Study",
+    "bankingImpact": "Impact · Banken & Kreditgenossenschaften in den USA und Europa",
+    "parkingImpact": "Impact · Web- + Mobile-Parkzahlung für den niederländischen Markt",
+    "streamingImpact": "Impact · Frontend-Lead · Mentoring von 2 Engineers"
   },
   "Contact": {
     "label": "Kontakt",
@@ -112,5 +116,35 @@
     "availableValue": "Offen für Möglichkeiten",
     "responseLabel": "Antwortzeit",
     "responseValue": "Innerhalb von 24 Stunden"
+  },
+  "CaseStudy": {
+    "label": "Case Study",
+    "back": "Zurück zu Projekten",
+    "liveDemo": "Live-Demo",
+    "viewCode": "Code ansehen",
+    "problem": "Problem",
+    "approach": "Ansatz",
+    "outcome": "Ergebnis",
+    "stack": "Stack"
+  },
+  "CaseStudies": {
+    "newsletter": {
+      "tagline": "RSS in → structured AI analysis → Postgres → a personal daily Telegram digest.",
+      "highlight_0": "Analyze once with Zod-validated LLM output — never re-score the same article.",
+      "highlight_1": "Multi-reader personalization on shared analyzed content.",
+      "highlight_2": "Production path: Vercel Cron + Supabase on a free-tier stack.",
+      "problem": "Most “AI newsletter” demos stop at a chatbot UI. The hard part is a reliable ingest → analyze → deliver pipeline that stays cheap, dedupes sources, and personalizes digests without re-running models for every reader.",
+      "approach": "InsightLoop collects RSS feeds, canonicalizes URLs, runs a structured LLM pass (Groq primary with optional failover), stores results in Postgres via Drizzle, and sends card-style Telegram digests. A Next.js dashboard covers Discover, preferences, pipeline health, and admin workflow controls.",
+      "outcome": "A portfolio-grade product you can click through live: public Discover, topic onboarding, Telegram connect, and a daily production cron — focused on orchestration, not just prompts."
+    },
+    "pulse": {
+      "tagline": "Real-time Binance market terminal built for event pressure, not just “connect a WebSocket”.",
+      "highlight_0": "rAF-batched stream updates to keep the UI responsive under load.",
+      "highlight_1": "Local order book synced to Binance snapshot + diff sequence rules.",
+      "highlight_2": "Performance Lab injects 1k–10k synthetic events/sec to prove the architecture.",
+      "problem": "Many crypto demos look fine with quiet markets and fall apart when trade and depth streams spike. Re-rendering per message and naive book updates create jank and correctness bugs.",
+      "approach": "Pulse Terminal uses a native WebSocket manager with reconnect/backoff, coalesces bursts on requestAnimationFrame into Zustand, virtualizes the trade feed, and keeps the local order book aligned with exchange sequence rules. Charts and depth UI stay interactive while metrics expose events/sec and UI Hz.",
+      "outcome": "A dense terminal experience that demonstrates production frontend craft: streaming reliability, batching, virtualization, and measurable performance under synthetic load."
+    }
   }
 }
