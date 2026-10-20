@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { applyPinnedRepos, getGitHubRepos, LANGUAGE_COLORS } from "./github";
 import type { GitHubRepo } from "./github";
+import { PINNED_REPO_NAMES } from "@/config/github-repos";
 
 describe("LANGUAGE_COLORS", () => {
   it("should have TypeScript color", () => {
@@ -17,7 +18,7 @@ describe("getGitHubRepos", () => {
     vi.restoreAllMocks();
   });
 
-  it("should return repos filtered by non-fork", async () => {
+  it("returns only the curated pinned list", async () => {
     const mockRepos = [
       {
         id: 1,
@@ -25,6 +26,7 @@ describe("getGitHubRepos", () => {
         fork: false,
         stargazers_count: 5,
         updated_at: "2024-01-01",
+        homepage: null,
       },
       {
         id: 2,
@@ -32,13 +34,17 @@ describe("getGitHubRepos", () => {
         fork: true,
         stargazers_count: 0,
         updated_at: "2024-01-01",
+        homepage: null,
       },
       {
         id: 3,
-        name: "repo-c",
+        name: "booking",
         fork: false,
         stargazers_count: 2,
         updated_at: "2024-01-01",
+        homepage: "https://booking-three-mocha.vercel.app",
+        html_url: "https://github.com/Nikolajdza/booking",
+        language: "TypeScript",
       },
     ];
 
@@ -51,17 +57,15 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result).toHaveLength(8); // 2 from API + 6 pinned
+    expect(result).toHaveLength(PINNED_REPO_NAMES.length);
     expect(result.every((r) => !r.fork)).toBe(true);
-    expect(result[0].name).toBe("ai-research-newsletter");
-    expect(result[1].name).toBe("ai-job-radar");
-    expect(result[2].name).toBe("pulse-terminal");
-    expect(result[3].name).toBe("booking");
-    expect(result[4].name).toBe("booking-api-rest");
-    expect(result[5].name).toBe("company");
+    expect(result.map((r) => r.name)).toEqual([...PINNED_REPO_NAMES]);
+    expect(result.find((r) => r.name === "booking")?.demoUrl).toBe(
+      "https://booking-three-mocha.vercel.app",
+    );
   });
 
-  it("should sort repos by stars descending", async () => {
+  it("hides non-curated repos even with high stars", async () => {
     const mockRepos = [
       {
         id: 1,
@@ -69,6 +73,7 @@ describe("getGitHubRepos", () => {
         fork: false,
         stargazers_count: 1,
         updated_at: "2024-01-01",
+        homepage: null,
       },
       {
         id: 2,
@@ -76,6 +81,7 @@ describe("getGitHubRepos", () => {
         fork: false,
         stargazers_count: 10,
         updated_at: "2024-01-01",
+        homepage: null,
       },
     ];
 
@@ -88,13 +94,8 @@ describe("getGitHubRepos", () => {
     );
 
     const result = await getGitHubRepos("testuser");
-    expect(result[0].name).toBe("ai-research-newsletter");
-    expect(result[1].name).toBe("ai-job-radar");
-    expect(result[2].name).toBe("pulse-terminal");
-    expect(result[3].name).toBe("booking");
-    expect(result[4].name).toBe("booking-api-rest");
-    expect(result[5].name).toBe("company");
-    expect(result[6].name).toBe("high-stars");
+    expect(result.map((r) => r.name)).toEqual([...PINNED_REPO_NAMES]);
+    expect(result.some((r) => r.name === "high-stars")).toBe(false);
   });
 
   it("should return empty array on non-ok response", async () => {
@@ -111,13 +112,15 @@ describe("getGitHubRepos", () => {
 });
 
 describe("applyPinnedRepos", () => {
-  it("puts ai-research-newsletter first, then the other pinned repos", () => {
+  it("returns curated repos in pinned order with demo URLs", () => {
     const repos: GitHubRepo[] = [
       {
         id: 1,
         name: "game-hub",
         description: null,
         html_url: "https://github.com/Nikolajdza/game-hub",
+        homepage: null,
+        demoUrl: null,
         language: "TypeScript",
         stack: ["React", "TypeScript"],
         stargazers_count: 3,
@@ -129,24 +132,14 @@ describe("applyPinnedRepos", () => {
     ];
 
     const result = applyPinnedRepos(repos);
+    expect(result).toHaveLength(PINNED_REPO_NAMES.length);
     expect(result[0].name).toBe("ai-research-newsletter");
-    expect(result[0].html_url).toBe(
-      "https://github.com/Nikolajdza/ai-research-newsletter",
-    );
+    expect(result[0].demoUrl).toBe("https://ai-research-newsletter.vercel.app");
     expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[1].name).toBe("ai-job-radar");
-    expect(result[1].html_url).toBe("https://github.com/Nikolajdza/ai-job-radar");
-    expect(result[1].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[2].name).toBe("pulse-terminal");
-    expect(result[2].html_url).toBe("https://github.com/Nikolajdza/pulse-terminal");
-    expect(result[2].stack).toEqual(["React", "TypeScript"]);
-    expect(result[3].name).toBe("booking");
-    expect(result[3].html_url).toBe("https://github.com/Nikolajdza/booking");
-    expect(result[3].stack).toEqual(["Next.js", "TypeScript"]);
     expect(result[4].name).toBe("booking-api-rest");
-    expect(result[4].stack).toEqual(["NestJS", "TypeScript"]);
-    expect(result[5].name).toBe("company");
-    expect(result[5].html_url).toBe("https://github.com/Nikolajdza/company");
-    expect(result[5].stack).toEqual(["Next.js", "TypeScript"]);
+    expect(result[4].demoUrl).toBeNull();
+    expect(result[6].name).toBe("green-api-max-chat");
+    expect(result[7].name).toBe("uber");
+    expect(result.some((r) => r.name === "game-hub")).toBe(false);
   });
 });

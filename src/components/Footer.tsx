@@ -26,7 +26,7 @@ export function Footer() {
               </span>
               <span className="text-foreground font-semibold">Nikola Buljčik</span>
             </div>
-            <p className="text-muted text-xs">Software Engineer · Novi Sad, Serbia</p>
+            <p className="text-muted text-xs">Software Engineer · {PERSONAL.location}</p>
           </div>
 
           {/* Nav links */}

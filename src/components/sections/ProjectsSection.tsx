@@ -65,7 +65,8 @@ export async function ProjectsSection() {
                   <RepoCard
                     repo={repo}
                     noDescLabel={t("noDescription")}
-                    viewLabel={t("viewOnGitHub")}
+                    demoLabel={t("liveDemo")}
+                    codeLabel={t("viewCode")}
                   />
                 </FadeInItem>
               ))}
@@ -144,79 +145,92 @@ function FeaturedCard({
 function RepoCard({
   repo,
   noDescLabel,
-  viewLabel,
+  demoLabel,
+  codeLabel,
 }: {
   repo: GitHubRepo;
   noDescLabel: string;
-  viewLabel: string;
+  demoLabel: string;
+  codeLabel: string;
 }) {
   return (
-    <a
-      href={repo.html_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${repo.name} — ${viewLabel}`}
+    <div
       className={cn(
         "group border-border bg-card flex flex-col rounded-2xl border p-5",
         "hover:border-accent/40 hover:shadow-accent/5 transition-all duration-200 hover:shadow-lg",
       )}
     >
-      {/* Repo name + external link icon */}
       <div className="mb-2 flex items-start justify-between gap-2">
-        <h4 className="text-foreground group-hover:text-accent font-mono text-sm font-semibold transition-colors">
-          {repo.name}
-        </h4>
-        <ExternalLink
-          size={14}
-          className="text-muted group-hover:text-accent mt-0.5 shrink-0 transition-colors"
-        />
-      </div>
-
-      {/* Description */}
-      <p className="text-muted mb-4 flex-1 text-xs leading-relaxed">
-        {repo.description ?? noDescLabel}
-      </p>
-
-      {/* Footer: stack tags + stars */}
-      <div className="flex items-end justify-between gap-2">
-        <div className="flex flex-wrap gap-1.5">
-          {repo.stack.map((tag) => {
-            const isLanguage = tag === repo.language;
-            const dotColor =
-              isLanguage && repo.language
-                ? (LANGUAGE_COLORS[repo.language] ?? "#8b8b8b")
-                : null;
-
-            return (
-              <span
-                key={tag}
-                className={cn(
-                  "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-mono text-[10px]",
-                  isLanguage
-                    ? "border-border/70 bg-muted-bg text-muted"
-                    : "border-accent/35 bg-accent/10 text-accent",
-                )}
-              >
-                {dotColor && (
-                  <span
-                    className="h-1.5 w-1.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: dotColor }}
-                    aria-hidden="true"
-                  />
-                )}
-                {tag}
-              </span>
-            );
-          })}
-        </div>
+        <h4 className="text-foreground font-mono text-sm font-semibold">{repo.name}</h4>
         {repo.stargazers_count > 0 && (
-          <span className="text-muted ml-auto flex shrink-0 items-center gap-1 font-mono text-xs">
+          <span className="text-muted flex shrink-0 items-center gap-1 font-mono text-xs">
             <Star size={11} />
             {repo.stargazers_count}
           </span>
         )}
       </div>
-    </a>
+
+      <p className="text-muted mb-4 flex-1 text-xs leading-relaxed">
+        {repo.description ?? noDescLabel}
+      </p>
+
+      <div className="mb-4 flex flex-wrap gap-1.5">
+        {repo.stack.map((tag) => {
+          const isLanguage = tag === repo.language;
+          const dotColor =
+            isLanguage && repo.language
+              ? (LANGUAGE_COLORS[repo.language] ?? "#8b8b8b")
+              : null;
+
+          return (
+            <span
+              key={tag}
+              className={cn(
+                "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-mono text-[10px]",
+                isLanguage
+                  ? "border-border/70 bg-muted-bg text-muted"
+                  : "border-accent/35 bg-accent/10 text-accent",
+              )}
+            >
+              {dotColor && (
+                <span
+                  className="h-1.5 w-1.5 shrink-0 rounded-full"
+                  style={{ backgroundColor: dotColor }}
+                  aria-hidden="true"
+                />
+              )}
+              {tag}
+            </span>
+          );
+        })}
+      </div>
+
+      <div className="mt-auto flex flex-wrap gap-2">
+        {repo.demoUrl && (
+          <a
+            href={repo.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-accent text-accent-fg hover:bg-accent/90 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors"
+          >
+            <ExternalLink size={12} />
+            {demoLabel}
+          </a>
+        )}
+        <a
+          href={repo.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "border-border text-muted hover:border-accent/40 hover:text-foreground inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
+            !repo.demoUrl && "border-accent/40 text-accent hover:bg-accent/10",
+          )}
+        >
+          <GitHubMark />
+          {codeLabel}
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -229,6 +243,20 @@ function GitHubIcon() {
       viewBox="0 0 24 24"
       fill="currentColor"
       className="text-foreground"
+      aria-hidden="true"
+    >
+      <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.216.69.825.573C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z" />
+    </svg>
+  );
+}
+
+function GitHubMark() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="currentColor"
       aria-hidden="true"
     >
       <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.216.69.825.573C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z" />

@@ -24,7 +24,7 @@ const labels: ContactLabels = {
   linkedIn: "LinkedIn",
   github: "GitHub",
   locationLabel: "Location",
-  locationValue: "Novi Sad, Serbia",
+  locationValue: "Belgrade, Serbia",
   availableLabel: "Availability",
   availableValue: "Open to opportunities",
   responseLabel: "Response time",
@@ -53,7 +53,7 @@ describe("ContactForm", () => {
 
   it("renders info cards", () => {
     render(<ContactForm labels={labels} />);
-    expect(screen.getByText("Novi Sad, Serbia")).toBeInTheDocument();
+    expect(screen.getByText("Belgrade, Serbia")).toBeInTheDocument();
     expect(screen.getByText("Open to opportunities")).toBeInTheDocument();
     expect(screen.getByText("Within 24 hours")).toBeInTheDocument();
   });

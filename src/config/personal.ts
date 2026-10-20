@@ -13,7 +13,9 @@ export const PERSONAL = {
   email: "nikolajdza@gmail.com",
   github: "https://github.com/Nikolajdza",
   linkedin: "https://www.linkedin.com/in/nikola-buljcik-4aab65205",
-  location: "Novi Sad, Serbia",
+  location: "Belgrade, Serbia",
+  /** Years of professional experience shown in hero config card */
+  experienceYears: 6,
 
   /** Google Drive “Anyone with the link” — opens PDF in Drive viewer */
   cvUrl:

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { PERSONAL } from "@/config/personal";
 
 /**
  * Decorative code-editor card for the Hero section.
@@ -47,7 +48,7 @@ export function HeroCodeCard() {
 
           <CodeLine indent>
             <Prop>location</Prop>
-            <Pun>:</Pun> <Str>&quot;Novi Sad, Serbia&quot;</Str>
+            <Pun>:</Pun> <Str>&quot;{PERSONAL.location}&quot;</Str>
             <Pun>,</Pun>
           </CodeLine>
 
@@ -62,7 +63,7 @@ export function HeroCodeCard() {
 
           <CodeLine indent>
             <Prop>experience</Prop>
-            <Pun>:</Pun> <Num>5</Num>
+            <Pun>:</Pun> <Num>{PERSONAL.experienceYears}</Num>
             <Pun>,</Pun>
           </CodeLine>
 

@@ -81,7 +81,9 @@
     "newsagg": "Kreirao aplikaciju za agregaciju vesti sa personalizovanim sadržajem, izborom tema, video funkcijama i real-time preuzimanjem podataka.",
     "streaming": "Vodio frontend sportske streaming platforme za britanskog klijenta — pretraga, filtriranje i reprodukcija videa, sa Next.js arhitekturom i React Query keširanjem.",
     "parking": "Izgradio web i mobilnu platformu za plaćanje parkinga za holandsko tržište — pretraga zona, lokacijske usluge i digitalno plaćanje u React i Flutter aplikacijama.",
-    "production": "Razvio aplikaciju za praćenje procesa proizvodnje i nabavke."
+    "production": "Razvio aplikaciju za praćenje procesa proizvodnje i nabavke.",
+    "liveDemo": "Live demo",
+    "viewCode": "Kod"
   },
   "Contact": {
     "label": "Kontakt",

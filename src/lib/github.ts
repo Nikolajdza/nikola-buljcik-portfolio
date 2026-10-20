@@ -1,4 +1,5 @@
 import {
+  getRepoDemoUrl,
   getRepoDescription,
   getRepoStackTags,
   PINNED_REPO_FALLBACKS,
@@ -10,6 +11,10 @@ export interface GitHubRepo {
   name: string;
   description: string | null;
   html_url: string;
+  /** Live demo URL from GitHub homepage field or config override */
+  homepage: string | null;
+  /** Resolved demo URL for the UI (config wins over homepage) */
+  demoUrl: string | null;
   language: string | null;
   /** Framework + language chips for the UI */
   stack: string[];
@@ -20,12 +25,22 @@ export interface GitHubRepo {
   topics: string[];
 }
 
-function withStack(
-  repo: Omit<GitHubRepo, "stack"> & { stack?: string[]; description?: string | null },
-): GitHubRepo {
+export type GitHubRepoSeed = Omit<GitHubRepo, "stack" | "demoUrl"> & {
+  stack?: string[];
+  demoUrl?: string | null;
+};
+
+function withStack(repo: GitHubRepoSeed): GitHubRepo {
+  const description = getRepoDescription({
+    name: repo.name,
+    description: repo.description ?? null,
+  });
+  const homepage = repo.homepage ?? null;
   return {
     ...repo,
-    description: getRepoDescription(repo),
+    description,
+    homepage,
+    demoUrl: getRepoDemoUrl({ name: repo.name, homepage }),
     stack: repo.stack ?? getRepoStackTags(repo),
   };
 }
@@ -50,7 +65,7 @@ export const LANGUAGE_COLORS: Record<string, string> = {
 export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
   try {
     const res = await fetch(
-      `https://api.github.com/users/${username}/repos?sort=updated&per_page=20&type=owner`,
+      `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=owner`,
       {
         next: { revalidate: 3600 },
         headers: { Accept: "application/vnd.github.v3+json" },
@@ -59,18 +74,37 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
 
     if (!res.ok) return [];
 
-    const data: GitHubRepo[] = await res.json();
-
-    const EXCLUDED = new Set([
-      "Blog-Website",
-      "Flutter-shop-app",
-      "booking-api-frontend",
-    ]);
+    const data: Array<{
+      id: number;
+      name: string;
+      description: string | null;
+      html_url: string;
+      homepage: string | null;
+      language: string | null;
+      stargazers_count: number;
+      forks_count: number;
+      updated_at: string;
+      fork: boolean;
+      topics?: string[];
+    }> = await res.json();
 
     const filtered = data
-      .filter((repo) => !repo.fork && !EXCLUDED.has(repo.name))
-      .map((repo) => withStack(repo))
-      .sort((a, b) => b.stargazers_count - a.stargazers_count);
+      .filter((repo) => !repo.fork)
+      .map((repo) =>
+        withStack({
+          id: repo.id,
+          name: repo.name,
+          description: repo.description,
+          html_url: repo.html_url,
+          homepage: repo.homepage,
+          language: repo.language,
+          stargazers_count: repo.stargazers_count,
+          forks_count: repo.forks_count,
+          updated_at: repo.updated_at,
+          fork: repo.fork,
+          topics: repo.topics ?? [],
+        }),
+      );
 
     return applyPinnedRepos(filtered);
   } catch {
@@ -78,20 +112,16 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
   }
 }
 
-/** Pinned repos first; use API data when available, else fallback config */
+/**
+ * Curated list only (PINNED_REPO_NAMES order).
+ * Uses API data when available, otherwise fallback config.
+ * Older repos are intentionally not shown.
+ */
 export function applyPinnedRepos(repos: GitHubRepo[]): GitHubRepo[] {
   const byName = new Map(repos.map((repo) => [repo.name, repo]));
 
-  const pinned: GitHubRepo[] = [];
-  for (const name of PINNED_REPO_NAMES) {
+  return PINNED_REPO_NAMES.map((name) => {
     const repo = byName.get(name) ?? PINNED_REPO_FALLBACKS[name];
-    pinned.push(withStack(repo));
-  }
-
-  const pinnedSet = new Set<string>(PINNED_REPO_NAMES);
-  const rest = repos
-    .filter((repo) => !pinnedSet.has(repo.name))
-    .map((repo) => withStack(repo));
-
-  return [...pinned, ...rest];
+    return withStack(repo);
+  });
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getRepoDescription, getRepoStackTags } from "./github-repos";
+import { getRepoDemoUrl, getRepoDescription, getRepoStackTags } from "./github-repos";
 
 describe("getRepoStackTags", () => {
   it("returns framework + language for known repos", () => {
@@ -18,14 +18,13 @@ describe("getRepoStackTags", () => {
     ]);
   });
 
-  it("maps API-Playground and portfolio with correct frameworks", () => {
-    expect(getRepoStackTags({ name: "API-Playground", language: "TypeScript" })).toEqual([
-      "React",
-      "TypeScript",
-    ]);
+  it("maps curated AI and chat repos with correct frameworks", () => {
     expect(
-      getRepoStackTags({ name: "nikola-buljcik-portfolio", language: "TypeScript" }),
+      getRepoStackTags({ name: "ai-research-newsletter", language: "TypeScript" }),
     ).toEqual(["Next.js", "TypeScript"]);
+    expect(
+      getRepoStackTags({ name: "green-api-max-chat", language: "TypeScript" }),
+    ).toEqual(["React", "TypeScript"]);
   });
 });
 
@@ -34,5 +33,20 @@ describe("getRepoDescription", () => {
     expect(getRepoDescription({ name: "game-hub", description: "A game store UI" })).toBe(
       "A game store UI",
     );
+  });
+});
+
+describe("getRepoDemoUrl", () => {
+  it("prefers configured demo URLs", () => {
+    expect(
+      getRepoDemoUrl({
+        name: "pulse-terminal",
+        homepage: "https://example.com",
+      }),
+    ).toBe("https://pulse-terminal-iota.vercel.app");
+  });
+
+  it("returns null when no demo exists", () => {
+    expect(getRepoDemoUrl({ name: "booking-api-rest", homepage: null })).toBeNull();
   });
 });

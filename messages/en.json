@@ -81,7 +81,9 @@
     "newsagg": "Created a news aggregation app with personalized content, topic selection, video features, and real-time data fetching.",
     "streaming": "Led the frontend of a UK sports streaming platform — browsing, filtering, and video playback, with a cleaner Next.js architecture and React Query caching.",
     "parking": "Built a web and mobile parking payment platform for the Dutch market — zone search, location services, and digital payment across React and Flutter.",
-    "production": "Developed an application for tracking production and procurement processes."
+    "production": "Developed an application for tracking production and procurement processes.",
+    "liveDemo": "Live demo",
+    "viewCode": "Code"
   },
   "Contact": {
     "label": "Contact",
