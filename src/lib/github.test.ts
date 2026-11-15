@@ -134,12 +134,13 @@ describe("applyPinnedRepos", () => {
 
     const result = applyPinnedRepos(repos);
     expect(result).toHaveLength(PINNED_REPO_NAMES.length);
-    expect(result[0].name).toBe("ai-research-newsletter");
-    expect(result[0].demoUrl).toBe("https://ai-research-newsletter.vercel.app");
-    expect(result[0].image).toBe("/images/projects/ai-research-newsletter.png");
-    expect(result[0].stack).toEqual(["Next.js", "TypeScript"]);
-    expect(result[4].name).toBe("company");
-    expect(result[5].name).toBe("uber");
+    expect(result[0].name).toBe("neura-folio");
+    expect(result[0].demoUrl).toBe("https://neura-folio.vercel.app");
+    expect(result[0].image).toBe("/images/projects/neura-folio.png");
+    expect(result[0].stack).toEqual(["Next.js", "NestJS", "TypeScript"]);
+    expect(result[1].name).toBe("ai-research-newsletter");
+    expect(result[5].name).toBe("company");
+    expect(result[6].name).toBe("uber");
     expect(result.some((r) => r.name === "booking-api-rest")).toBe(false);
     expect(result.some((r) => r.name === "green-api-max-chat")).toBe(false);
     expect(result.some((r) => r.name === "game-hub")).toBe(false);

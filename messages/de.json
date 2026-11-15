@@ -131,6 +131,15 @@
     "stack": "Stack"
   },
   "CaseStudies": {
+    "neura": {
+      "tagline": "Chat with a CV + GitHub knowledge base — RAG, citations, hybrid search, multi-provider fallback.",
+      "highlight_0": "Hybrid retrieval: pgvector similarity + full-text search over ingested CV and repos.",
+      "highlight_1": "SSE chat with source citations and follow-up suggestions grounded in retrieved chunks.",
+      "highlight_2": "Groq primary with Gemini/Cerebras fallback; NestJS API on Render + Next.js on Vercel.",
+      "problem": "Most “AI portfolio” demos are a thin chat wrapper over a prompt. The hard part is ingesting a CV and public repos into a searchable knowledge base, retrieving the right chunks, and answering with citations that stay honest when the model fails over.",
+      "approach": "NeuraFolio ingests a resume PDF and GitHub repos into Neon Postgres (pgvector + FTS), serves RAG chat from a NestJS backend with hybrid retrieval and optional tool agent, and streams answers to a Next.js UI with source filters (All / CV / GitHub) and temporary visitor CV upload.",
+      "outcome": "A live product you can open and chat with — creator CV + GitHub by default, upload-your-own CV for a session, and a clear split between frontend (Vercel) and API/RAG (Render) on a free-tier path."
+    },
     "newsletter": {
       "tagline": "RSS in → structured AI analysis → Postgres → a personal daily Telegram digest.",
       "highlight_0": "Analyze once with Zod-validated LLM output — never re-score the same article.",

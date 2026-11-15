@@ -5,6 +5,7 @@ import type { GitHubRepo, GitHubRepoSeed } from "@/lib/github";
  * Only these repos are shown — older demos stay hidden.
  */
 export const PINNED_REPO_NAMES = [
+  "neura-folio",
   "ai-research-newsletter",
   "ai-job-radar",
   "pulse-terminal",
@@ -22,6 +23,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
   company: ["Next.js", "TypeScript"],
+  "neura-folio": ["Next.js", "NestJS", "TypeScript"],
   "ai-research-newsletter": ["Next.js", "TypeScript"],
   "ai-job-radar": ["Next.js", "TypeScript"],
   "pulse-terminal": ["React", "TypeScript"],
@@ -31,6 +33,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
 
 /** Live demo URLs (Vercel). Omit when there is no public frontend. */
 export const REPO_DEMO_URLS: Record<string, string> = {
+  "neura-folio": "https://neura-folio.vercel.app",
   "ai-research-newsletter": "https://ai-research-newsletter.vercel.app",
   "ai-job-radar": "https://ai-job-radar-sigma.vercel.app",
   "pulse-terminal": "https://pulse-terminal-iota.vercel.app",
@@ -42,6 +45,7 @@ export const REPO_DEMO_URLS: Record<string, string> = {
 
 /** Optional card preview images under /public */
 export const REPO_IMAGES: Record<string, string> = {
+  "neura-folio": "/images/projects/neura-folio.png",
   "ai-research-newsletter": "/images/projects/ai-research-newsletter.png",
   "ai-job-radar": "/images/projects/ai-job-radar.png",
   "pulse-terminal": "/images/projects/pulse-terminal.png",
@@ -62,6 +66,8 @@ export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "NestJS REST API for property bookings — reservations, Stripe payments, S3 uploads, and notifications.",
   company:
     "Company website built with Next.js — i18n, modern design, and deployed on Vercel.",
+  "neura-folio":
+    "NeuraFolio — personal AI portfolio assistant: chat with your CV and GitHub via RAG, citations, hybrid search, and multi-provider LLM fallback.",
   "ai-research-newsletter":
     "InsightLoop — RSS → structured AI analysis → Postgres → daily Telegram digest, with a Next.js dashboard and Vercel Cron.",
   "ai-job-radar":
@@ -96,6 +102,21 @@ export function getRepoDemoUrl(
 
 /** Fallback when API list is stale or repo is very new */
 export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepoSeed> = {
+  "neura-folio": {
+    id: 9_008,
+    name: "neura-folio",
+    description:
+      "NeuraFolio — personal AI portfolio assistant: chat with your CV and GitHub via RAG, citations, hybrid search, and multi-provider LLM fallback.",
+    html_url: "https://github.com/Nikolajdza/neura-folio",
+    homepage: "https://neura-folio.vercel.app",
+    language: "TypeScript",
+    stack: ["Next.js", "NestJS", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-01-01T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "nestjs", "rag", "postgres", "pgvector", "groq"],
+  },
   "ai-research-newsletter": {
     id: 9_005,
     name: "ai-research-newsletter",

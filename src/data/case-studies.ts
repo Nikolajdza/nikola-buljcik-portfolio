@@ -15,6 +15,18 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "neura-folio",
+    repoName: "neura-folio",
+    title: "NeuraFolio",
+    contentKey: "neura",
+    year: "2026",
+    stack: ["Next.js", "NestJS", "Postgres", "pgvector", "Groq", "RAG", "Render"],
+    image: "/images/projects/neura-folio.png",
+    demoUrl: "https://neura-folio.vercel.app",
+    githubUrl: "https://github.com/Nikolajdza/neura-folio",
+    gradient: "from-teal-500/30 to-emerald-500/20",
+  },
+  {
     slug: "ai-research-newsletter",
     repoName: "ai-research-newsletter",
     title: "InsightLoop",

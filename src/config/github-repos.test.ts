@@ -19,6 +19,11 @@ describe("getRepoStackTags", () => {
   });
 
   it("maps curated AI and chat repos with correct frameworks", () => {
+    expect(getRepoStackTags({ name: "neura-folio", language: "TypeScript" })).toEqual([
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+    ]);
     expect(
       getRepoStackTags({ name: "ai-research-newsletter", language: "TypeScript" }),
     ).toEqual(["Next.js", "TypeScript"]);
