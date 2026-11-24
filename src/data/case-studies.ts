@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/images/projects/gatherly.jpg",
     demoUrl: "https://gatherly-tau-five.vercel.app",
-    githubUrl: null,
+    githubUrl: "https://github.com/Nikolajdza/gatherly",
     gradient: "from-emerald-500/30 to-amber-500/20",
   },
   {
