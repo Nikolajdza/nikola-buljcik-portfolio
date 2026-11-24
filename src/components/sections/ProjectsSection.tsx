@@ -247,18 +247,20 @@ function RepoCard({
               {demoLabel}
             </a>
           )}
-          <a
-            href={repo.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "border-border text-muted hover:border-accent/40 hover:text-foreground inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
-              !repo.demoUrl && "border-accent/40 text-accent hover:bg-accent/10",
-            )}
-          >
-            <GitHubMark />
-            {codeLabel}
-          </a>
+          {repo.html_url && (
+            <a
+              href={repo.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "border-border text-muted hover:border-accent/40 hover:text-foreground inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
+                !repo.demoUrl && "border-accent/40 text-accent hover:bg-accent/10",
+              )}
+            >
+              <GitHubMark />
+              {codeLabel}
+            </a>
+          )}
           {caseStudy && (
             <Link
               href={`/projects/${caseStudy.slug}`}

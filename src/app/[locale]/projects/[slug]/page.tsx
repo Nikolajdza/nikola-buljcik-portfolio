@@ -93,14 +93,16 @@ export default async function CaseStudyPage({ params }: Props) {
                 {ui("liveDemo")}
               </a>
             )}
-            <a
-              href={study.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-border text-foreground hover:border-accent/40 inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors"
-            >
-              {ui("viewCode")}
-            </a>
+            {study.githubUrl && (
+              <a
+                href={study.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-border text-foreground hover:border-accent/40 inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors"
+              >
+                {ui("viewCode")}
+              </a>
+            )}
           </div>
         </FadeIn>
 

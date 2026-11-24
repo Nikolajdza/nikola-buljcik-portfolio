@@ -9,7 +9,8 @@ export interface CaseStudy {
   stack: string[];
   image: string;
   demoUrl: string | null;
-  githubUrl: string;
+  /** Null when the GitHub repo stays private */
+  githubUrl: string | null;
   gradient: string;
 }
 
@@ -32,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/images/projects/gatherly.jpg",
     demoUrl: "https://gatherly-tau-five.vercel.app",
-    githubUrl: "https://github.com/Nikolajdza/gatherly",
+    githubUrl: null,
     gradient: "from-emerald-500/30 to-amber-500/20",
   },
   {

@@ -16,6 +16,12 @@ export const PINNED_REPO_NAMES = [
 ] as const;
 
 /**
+ * Pinned on the portfolio with a live demo, but source stays private.
+ * Hide GitHub "Code" links so visitors are not sent to a 404.
+ */
+export const PRIVATE_SOURCE_REPOS = new Set<string>(["gatherly"]);
+
+/**
  * Main stack per repo — framework/platform first, language last.
  * GitHub only exposes `language` (e.g. TypeScript); we add the meaningful layer.
  */
@@ -113,7 +119,7 @@ export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepoSeed> = {
     name: "gatherly",
     description:
       "Gatherly — gift registries, Secret Santa and shared lists with themes, invites, reservations, and AI product import. Next.js + NestJS + Supabase + Groq.",
-    html_url: "https://github.com/Nikolajdza/gatherly",
+    html_url: null,
     homepage: "https://gatherly-tau-five.vercel.app",
     language: "TypeScript",
     stack: ["Next.js", "NestJS", "TypeScript"],

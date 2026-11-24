@@ -136,6 +136,7 @@ describe("applyPinnedRepos", () => {
     expect(result).toHaveLength(PINNED_REPO_NAMES.length);
     expect(result[0].name).toBe("gatherly");
     expect(result[0].demoUrl).toBe("https://gatherly-tau-five.vercel.app");
+    expect(result[0].html_url).toBeNull();
     expect(result[0].image).toBe("/images/projects/gatherly.jpg");
     expect(result[0].stack).toEqual(["Next.js", "NestJS", "TypeScript"]);
     expect(result[1].name).toBe("neura-folio");

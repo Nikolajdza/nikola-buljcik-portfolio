@@ -5,13 +5,15 @@ import {
   getRepoStackTags,
   PINNED_REPO_FALLBACKS,
   PINNED_REPO_NAMES,
+  PRIVATE_SOURCE_REPOS,
 } from "@/config/github-repos";
 
 export interface GitHubRepo {
   id: number;
   name: string;
   description: string | null;
-  html_url: string;
+  /** Null when source is private / not linked from the portfolio */
+  html_url: string | null;
   /** Live demo URL from GitHub homepage field or config override */
   homepage: string | null;
   /** Resolved demo URL for the UI (config wins over homepage) */
@@ -44,6 +46,7 @@ function withStack(repo: GitHubRepoSeed): GitHubRepo {
     ...repo,
     description,
     homepage,
+    html_url: PRIVATE_SOURCE_REPOS.has(repo.name) ? null : (repo.html_url ?? null),
     demoUrl: getRepoDemoUrl({ name: repo.name, homepage }),
     image: getRepoImage(repo.name),
     stack: repo.stack ?? getRepoStackTags(repo),
