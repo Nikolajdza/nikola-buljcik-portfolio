@@ -131,6 +131,15 @@
     "stack": "Stack"
   },
   "CaseStudies": {
+    "gatherly": {
+      "tagline": "Gift registries, Secret Santa and shared lists — one product for celebrations people actually plan together.",
+      "highlight_0": "Template-driven experiences with themes, public pages, roles, and atomic gift reservations.",
+      "highlight_1": "Secret Santa with exclusions, private draws, wishlists, and invite links over WhatsApp/Telegram/email.",
+      "highlight_2": "Monorepo: Next.js 16 + NestJS + Supabase Auth/Postgres + Groq AI import, live on Vercel and Render.",
+      "problem": "Event planning tools are usually either a spreadsheet, a single-purpose registry, or a heavy SaaS. Couples and friends need one calm place for gifts, Secret Santa, and shared lists — with privacy that keeps surprises intact.",
+      "approach": "Gatherly models each celebration as an experience with its own template, theme, membership roles, and public page. Gift reservations are atomic, Secret Santa draws stay private even to organizers, and AI helps import products from store links without inventing prices. Invites go out via Resend or share deep links.",
+      "outcome": "A live multi-locale product you can open today: create an experience, invite people, reserve gifts, and run Secret Santa — frontend on Vercel, API on Render, auth and data on Supabase."
+    },
     "neura": {
       "tagline": "Chat with a CV + GitHub knowledge base — RAG, citations, hybrid search, multi-provider fallback.",
       "highlight_0": "Hybrid retrieval: pgvector similarity + full-text search over ingested CV and repos.",

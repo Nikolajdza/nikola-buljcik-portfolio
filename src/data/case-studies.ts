@@ -15,6 +15,27 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "gatherly",
+    repoName: "gatherly",
+    title: "Gatherly",
+    contentKey: "gatherly",
+    year: "2026",
+    stack: [
+      "Next.js",
+      "NestJS",
+      "Supabase",
+      "Prisma",
+      "Groq",
+      "Resend",
+      "Vercel",
+      "Render",
+    ],
+    image: "/images/projects/gatherly.jpg",
+    demoUrl: "https://gatherly-tau-five.vercel.app",
+    githubUrl: "https://github.com/Nikolajdza/gatherly",
+    gradient: "from-emerald-500/30 to-amber-500/20",
+  },
+  {
     slug: "neura-folio",
     repoName: "neura-folio",
     title: "NeuraFolio",

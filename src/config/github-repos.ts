@@ -5,6 +5,7 @@ import type { GitHubRepo, GitHubRepoSeed } from "@/lib/github";
  * Only these repos are shown — older demos stay hidden.
  */
 export const PINNED_REPO_NAMES = [
+  "gatherly",
   "neura-folio",
   "ai-research-newsletter",
   "ai-job-radar",
@@ -19,6 +20,7 @@ export const PINNED_REPO_NAMES = [
  * GitHub only exposes `language` (e.g. TypeScript); we add the meaningful layer.
  */
 export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
+  gatherly: ["Next.js", "NestJS", "TypeScript"],
   booking: ["Next.js", "TypeScript"],
   "booking-api-rest": ["NestJS", "TypeScript"],
   "nikola-buljcik-portfolio": ["Next.js", "TypeScript"],
@@ -33,6 +35,7 @@ export const REPO_STACK_TAGS: Record<string, readonly string[]> = {
 
 /** Live demo URLs (Vercel). Omit when there is no public frontend. */
 export const REPO_DEMO_URLS: Record<string, string> = {
+  gatherly: "https://gatherly-tau-five.vercel.app",
   "neura-folio": "https://neura-folio.vercel.app",
   "ai-research-newsletter": "https://ai-research-newsletter.vercel.app",
   "ai-job-radar": "https://ai-job-radar-sigma.vercel.app",
@@ -45,6 +48,7 @@ export const REPO_DEMO_URLS: Record<string, string> = {
 
 /** Optional card preview images under /public */
 export const REPO_IMAGES: Record<string, string> = {
+  gatherly: "/images/projects/gatherly.jpg",
   "neura-folio": "/images/projects/neura-folio.png",
   "ai-research-newsletter": "/images/projects/ai-research-newsletter.png",
   "ai-job-radar": "/images/projects/ai-job-radar.png",
@@ -60,6 +64,8 @@ export function getRepoImage(repoName: string): string | null {
 
 /** Optional copy when GitHub repo has no description */
 export const REPO_DESCRIPTION_OVERRIDES: Record<string, string> = {
+  gatherly:
+    "Gatherly — gift registries, Secret Santa and shared lists with themes, invites, reservations, and AI product import. Next.js + NestJS + Supabase + Groq.",
   booking:
     "Booking-style Next.js app — search, map, checkout, i18n, and mock API structured for a real backend swap.",
   "booking-api-rest":
@@ -102,6 +108,21 @@ export function getRepoDemoUrl(
 
 /** Fallback when API list is stale or repo is very new */
 export const PINNED_REPO_FALLBACKS: Record<string, GitHubRepoSeed> = {
+  gatherly: {
+    id: 9_009,
+    name: "gatherly",
+    description:
+      "Gatherly — gift registries, Secret Santa and shared lists with themes, invites, reservations, and AI product import. Next.js + NestJS + Supabase + Groq.",
+    html_url: "https://github.com/Nikolajdza/gatherly",
+    homepage: "https://gatherly-tau-five.vercel.app",
+    language: "TypeScript",
+    stack: ["Next.js", "NestJS", "TypeScript"],
+    stargazers_count: 0,
+    forks_count: 0,
+    updated_at: "2026-11-24T00:00:00Z",
+    fork: false,
+    topics: ["nextjs", "nestjs", "supabase", "typescript", "groq"],
+  },
   "neura-folio": {
     id: 9_008,
     name: "neura-folio",
